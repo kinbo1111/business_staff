@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>ビジネススタッフ養成講座</title>
+</head>
+
+<body id="top">
+    <!-- ==================== Header ==================== -->
+    <header class="header" id="header">
+        <div class="header__inner container">
+            <a href="#top" class="header__logo" aria-label="トップページへ">
+                <img src="./assets/images/logo.svg" alt="ロゴ" width="180" height="40">
+            </a>
+            <nav class="header__nav" aria-label="メインナビゲーション">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="#concept">サービス</a></li>
+                    <li class="header__nav-item"><a href="#pricing">料金</a></li>
+                    <li class="header__nav-item"><a href="#flow">ご利用の流れ</a></li>
+                    <li class="header__nav-item"><a href="#faq">よくある質問</a></li>
+                </ul>
+                <a href="#contact" class="header__contact btn btn--header">お問い合わせ</a>
+            </nav>
+            <button class="header__menu-btn" type="button" aria-label="メニューを開く" aria-expanded="false"
+                aria-controls="header-drawer">
+                <span class="header__menu-bar"></span>
+                <span class="header__menu-bar"></span>
+                <span class="header__menu-bar"></span>
+            </button>
+        </div>
+        <nav class="header__drawer" id="header-drawer" aria-label="モバイルメニュー" hidden>
+            <ul class="header__drawer-list">
+                <li><a href="#concept">サービス</a></li>
+                <li><a href="#pricing">料金</a></li>
+                <li><a href="#flow">ご利用の流れ</a></li>
+                <li><a href="#faq">よくある質問</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ==================== Hero ==================== -->
+        <section class="hero" id="hero" aria-labelledby="hero-heading">
+            <div class="hero__bg">
+                <img src="./assets/images/hero-bg.jpg" alt="" class="hero__bg-image" width="1920" height="800">
+            </div>
+            <div class="hero__inner container">
+                <div class="hero__content">
+                    <div class="hero__box">
+                        <p class="hero__label">ビジネススタッフ養成講座</p>
+                        <h1 class="hero__heading" id="hero-heading">
+                            あなたの<span class="hero__heading-accent">「話す力」</span>が<br>
+                            ビジネスの武器になる
+                        </h1>
+                        <ul class="hero__points">
+                            <li class="hero__point">実践的なプレゼン・スピーチスキルを習得</li>
+                            <li class="hero__point">少人数制で一人ひとりに寄り添った指導</li>
+                            <li class="hero__point">現場ですぐに活かせる実務力を身につける</li>
+                        </ul>
+                        <a href="#contact" class="hero__cta btn btn--primary">無料カウンセリングはこちら</a>
+                    </div>
+                    <p class="hero__sub">
+                        人前で話すことに自信が持てない方も、<br>
+                        プロの講師が丁寧にサポートします。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== Problem ==================== -->
+        <section class="problem" id="problem" aria-labelledby="problem-heading">
+            <div class="problem__inner container">
+                <h2 class="problem__heading" id="problem-heading">こんなお悩みありませんか？</h2>
+                <ul class="problem__list">
+                    <li class="problem__item">
+                        <div class="problem__bubble">
+                            <p class="problem__bubble-text">会議で意見を言えない…</p>
+                        </div>
+                        <div class="problem__avatar">
+                            <img src="./assets/images/problem-01.jpg" alt="" width="120" height="120">
+                        </div>
+                    </li>
+                    <li class="problem__item">
+                        <div class="problem__bubble">
+                            <p class="problem__bubble-text">プレゼンが苦手で緊張してしまう</p>
+                        </div>
+                        <div class="problem__avatar">
+                            <img src="./assets/images/problem-02.jpg" alt="" width="120" height="120">
+                        </div>
+                    </li>
+                    <li class="problem__item">
+                        <div class="problem__bubble">
+                            <p class="problem__bubble-text">接客や電話対応に自信がない</p>
+                        </div>
+                        <div class="problem__avatar">
+                            <img src="./assets/images/problem-03.jpg" alt="" width="120" height="120">
+                        </div>
+                    </li>
+                    <li class="problem__item">
+                        <div class="problem__bubble">
+                            <p class="problem__bubble-text">キャリアアップのために何を学べばいいかわからない</p>
+                        </div>
+                        <div class="problem__avatar">
+                            <img src="./assets/images/problem-04.jpg" alt="" width="120" height="120">
+                        </div>
+                    </li>
+                </ul>
+                <div class="problem__action">
+                    <a href="#concept" class="problem__cta btn btn--primary">まずは詳しく見る</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== Concept ==================== -->
+        <section class="concept" id="concept" aria-labelledby="concept-heading">
+            <div class="concept__inner container">
+                <div class="concept__ribbon ribbon-heading">
+                    <h2 class="ribbon-heading__text" id="concept-heading">コンセプト</h2>
+                </div>
+                <div class="concept__body">
+                    <div class="concept__visual">
+                        <img src="./assets/images/concept.jpg" alt="講座の様子" width="520" height="360">
+                    </div>
+                    <div class="concept__content">
+                        <p class="concept__lead">
+                            ビジネススタッフ養成講座は、<br>
+                            実践的なコミュニケーション力を身につけるためのプログラムです。
+                        </p>
+                        <ul class="concept__list">
+                            <li class="concept__list-item">現場で求められるビジネスマナーと話し方を学べます</li>
+                            <li class="concept__list-item">ロールプレイングを通じて実践力を養います</li>
+                            <li class="concept__list-item">個人の課題に合わせたカスタマイズ指導が可能です</li>
+                            <li class="concept__list-item">修了後もフォローアップで安心サポート</li>
+                        </ul>
+                    </div>
+                    <p class="concept__vertical-label" aria-hidden="true">CONCEPT</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== Features ==================== -->
+        <section class="features" id="features" aria-labelledby="features-heading">
+            <div class="features__inner container">
+                <p class="features__watermark" aria-hidden="true">Features</p>
+                <h2 class="features__heading visually-hidden" id="features-heading">講座の特徴</h2>
+                <ul class="features__grid">
+                    <li class="features__card">
+                        <p class="features__number">01</p>
+                        <h3 class="features__title">少人数制の個別指導</h3>
+                        <p class="features__desc">
+                            一人ひとりのレベルや目標に合わせた丁寧な指導で、着実にスキルアップできます。
+                        </p>
+                    </li>
+                    <li class="features__card">
+                        <p class="features__number">02</p>
+                        <h3 class="features__title">実践型カリキュラム</h3>
+                        <p class="features__desc">
+                            座学だけでなく、ロールプレイやプレゼン実践で現場ですぐ使える力を養います。
+                        </p>
+                    </li>
+                    <li class="features__card">
+                        <p class="features__number">03</p>
+                        <h3 class="features__title">プロ講師によるサポート</h3>
+                        <p class="features__desc">
+                            豊富な経験を持つ講師陣が、あなたの成長を全力でバックアップします。
+                        </p>
+                    </li>
+                    <li class="features__card">
+                        <p class="features__number">04</p>
+                        <h3 class="features__title">柔軟な受講スタイル</h3>
+                        <p class="features__desc">
+                            個人・法人どちらにも対応。スケジュールに合わせた受講プランをご提案します。
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ==================== Pricing ==================== -->
+        <section class="pricing" id="pricing" aria-labelledby="pricing-heading">
+            <div class="pricing__inner container">
+                <div class="pricing__ribbon ribbon-heading">
+                    <h2 class="ribbon-heading__text" id="pricing-heading">料金プラン</h2>
+                </div>
+                <div class="pricing__table-wrapper">
+                    <table class="pricing__table">
+                        <thead>
+                            <tr>
+                                <th scope="col">プラン名</th>
+                                <th scope="col">内容</th>
+                                <th scope="col">こんな方におすすめ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">ベーシックプラン</th>
+                                <td>月4回・各90分のグループレッスン</td>
+                                <td>基礎からしっかり学びたい方</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">スタンダードプラン</th>
+                                <td>月4回のグループレッスン＋月2回の個別指導</td>
+                                <td>着実にスキルアップしたい方</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">プレミアムプラン</th>
+                                <td>月8回の個別指導＋プレゼン実践サポート</td>
+                                <td>短期間で成果を出したい方</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">法人研修プラン</th>
+                                <td>貴社の課題に合わせたオーダーメイド研修</td>
+                                <td>社員教育・人材育成をお考えの企業様</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">体験レッスン</th>
+                                <td>60分の無料体験＋カウンセリング</td>
+                                <td>まずは雰囲気を知りたい方</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== Comparison (Individual / Corporate) ==================== -->
+        <section class="comparison" id="comparison" aria-labelledby="comparison-heading">
+            <div class="comparison__inner container">
+                <h2 class="comparison__heading visually-hidden" id="comparison-heading">対象者別プラン</h2>
+                <ul class="comparison__cards">
+                    <li class="comparison__card comparison__card--individual">
+                        <div class="comparison__card-header">
+                            <p class="comparison__card-label">個人向け</p>
+                        </div>
+                        <div class="comparison__card-body">
+                            <p class="comparison__card-lead">
+                                キャリアアップや転職を目指す方、<br>
+                                コミュニケーション力を高めたい方に。
+                            </p>
+                            <ul class="comparison__card-list">
+                                <li>自分のペースで学べる柔軟なスケジュール</li>
+                                <li>個人の目標に合わせたカリキュラム</li>
+                                <li>無料カウンセリングで最適プランをご提案</li>
+                            </ul>
+                            <div class="comparison__card-icon">
+                                <img src="./assets/images/icon-individual.svg" alt="" width="64" height="64">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="comparison__card comparison__card--corporate">
+                        <div class="comparison__card-header">
+                            <p class="comparison__card-label">法人向け</p>
+                        </div>
+                        <div class="comparison__card-body">
+                            <p class="comparison__card-lead">
+                                社員研修・新人教育・接客力向上など、<br>
+                                企業の課題に合わせた研修プログラム。
+                            </p>
+                            <ul class="comparison__card-list">
+                                <li>貴社の業種・課題に合わせたオーダーメイド</li>
+                                <li>オンサイト・オンライン両対応</li>
+                                <li>研修効果の測定・レポート提出も可能</li>
+                            </ul>
+                            <div class="comparison__card-icon">
+                                <img src="./assets/images/icon-corporate.svg" alt="" width="64" height="64">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ==================== CTA Banner 1 ==================== -->
+        <section class="cta-banner" id="cta-banner" aria-labelledby="cta-banner-heading">
+            <div class="cta-banner__inner container">
+                <h2 class="cta-banner__heading" id="cta-banner-heading">
+                    まずは無料カウンセリングで<br>
+                    あなたに合ったプランを見つけましょう
+                </h2>
+                <a href="#contact" class="cta-banner__btn btn btn--white">無料カウンセリングを予約する</a>
+            </div>
+        </section>
+
+        <!-- ==================== Reasons ==================== -->
+        <section class="reasons" id="reasons" aria-labelledby="reasons-heading">
+            <div class="reasons__inner container">
+                <h2 class="reasons__heading" id="reasons-heading">選ばれる理由</h2>
+                <ul class="reasons__highlights">
+                    <li class="reasons__highlight">
+                        <div class="reasons__highlight-circle">
+                            <p class="reasons__highlight-text">実績<br><span class="reasons__highlight-num">500</span>名以上</p>
+                        </div>
+                    </li>
+                    <li class="reasons__highlight">
+                        <div class="reasons__highlight-circle">
+                            <p class="reasons__highlight-text">満足度<br><span class="reasons__highlight-num">98</span>%</p>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="reasons__list">
+                    <li class="reasons__item">
+                        <div class="reasons__item-visual">
+                            <img src="./assets/images/reason-01.jpg" alt="講座風景" width="480" height="320">
+                        </div>
+                        <div class="reasons__item-content">
+                            <h3 class="reasons__item-title">現場で活きる実践的なカリキュラム</h3>
+                            <p class="reasons__item-desc">
+                                座学だけでなく、実際のビジネスシーンを想定したロールプレイやプレゼン実践を通じて、
+                                すぐに現場で使えるスキルを身につけられます。
+                            </p>
+                        </div>
+                    </li>
+                    <li class="reasons__item reasons__item--reverse">
+                        <div class="reasons__item-visual">
+                            <img src="./assets/images/reason-02.jpg" alt="個別指導の様子" width="480" height="320">
+                        </div>
+                        <div class="reasons__item-content">
+                            <h3 class="reasons__item-title">一人ひとりに寄り添う個別サポート</h3>
+                            <p class="reasons__item-desc">
+                                受講者のレベルや目標は一人ひとり異なります。
+                                プロの講師が丁寧にヒアリングし、最適な学習プランをご提案します。
+                            </p>
+                        </div>
+                    </li>
+                    <li class="reasons__item">
+                        <div class="reasons__item-visual">
+                            <img src="./assets/images/reason-03.jpg" alt="修了後のフォロー" width="480" height="320">
+                        </div>
+                        <div class="reasons__item-content">
+                            <h3 class="reasons__item-title">修了後も続く安心フォロー体制</h3>
+                            <p class="reasons__item-desc">
+                                講座修了後もフォローアップセッションやコミュニティへの参加で、
+                                学んだことを定着させ、継続的な成長をサポートします。
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ==================== Flow ==================== -->
+        <section class="flow" id="flow" aria-labelledby="flow-heading">
+            <div class="flow__inner container">
+                <h2 class="flow__heading" id="flow-heading">ご利用の流れ</h2>
+                <ol class="flow__steps">
+                    <li class="flow__step">
+                        <div class="flow__step-box">
+                            <p class="flow__step-number">01</p>
+                            <h3 class="flow__step-title">お問い合わせ</h3>
+                            <p class="flow__step-desc">フォームまたはお電話でご連絡ください</p>
+                        </div>
+                    </li>
+                    <li class="flow__step-arrow" aria-hidden="true"></li>
+                    <li class="flow__step">
+                        <div class="flow__step-box">
+                            <p class="flow__step-number">02</p>
+                            <h3 class="flow__step-title">無料カウンセリング</h3>
+                            <p class="flow__step-desc">ご要望をお聞きし、最適なプランをご提案</p>
+                        </div>
+                    </li>
+                    <li class="flow__step-arrow" aria-hidden="true"></li>
+                    <li class="flow__step">
+                        <div class="flow__step-box">
+                            <p class="flow__step-number">03</p>
+                            <h3 class="flow__step-title">受講開始</h3>
+                            <p class="flow__step-desc">スケジュールに合わせてレッスンスタート</p>
+                        </div>
+                    </li>
+                    <li class="flow__step-arrow" aria-hidden="true"></li>
+                    <li class="flow__step">
+                        <div class="flow__step-box">
+                            <p class="flow__step-number">04</p>
+                            <h3 class="flow__step-title">修了・フォロー</h3>
+                            <p class="flow__step-desc">修了後も継続的なサポートをご提供</p>
+                        </div>
+                    </li>
+                </ol>
+                <div class="flow__action">
+                    <a href="#contact" class="flow__cta btn btn--white">お問い合わせはこちら</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== Reviews ==================== -->
+        <section class="reviews" id="reviews" aria-labelledby="reviews-heading">
+            <div class="reviews__inner container">
+                <p class="reviews__watermark" aria-hidden="true">Review</p>
+                <h2 class="reviews__heading visually-hidden" id="reviews-heading">受講者の声</h2>
+                <ul class="reviews__list">
+                    <li class="reviews__item">
+                        <div class="reviews__item-content">
+                            <p class="reviews__number">01</p>
+                            <div class="reviews__bubble">
+                                <p class="reviews__text">
+                                    プレゼンが苦手でしたが、3ヶ月の受講で社内発表を任されるようになりました。
+                                    講師の方の丁寧な指導のおかげで、自信を持って話せるようになったのが一番の成果です。
+                                </p>
+                                <p class="reviews__meta">A.Kさん（30代・営業職）</p>
+                            </div>
+                        </div>
+                        <div class="reviews__item-visual">
+                            <img src="./assets/images/review-01.jpg" alt="" width="200" height="200">
+                        </div>
+                    </li>
+                    <li class="reviews__item reviews__item--reverse">
+                        <div class="reviews__item-content">
+                            <p class="reviews__number">02</p>
+                            <div class="reviews__bubble">
+                                <p class="reviews__text">
+                                    接客の電話対応に自信がなくて悩んでいました。
+                                    ロールプレイを繰り返すうちに、自然とスムーズに対応できるようになりました。
+                                </p>
+                                <p class="reviews__meta">M.Sさん（20代・事務職）</p>
+                            </div>
+                        </div>
+                        <div class="reviews__item-visual">
+                            <img src="./assets/images/review-02.jpg" alt="" width="200" height="200">
+                        </div>
+                    </li>
+                    <li class="reviews__item">
+                        <div class="reviews__item-content">
+                            <p class="reviews__number">03</p>
+                            <div class="reviews__bubble">
+                                <p class="reviews__text">
+                                    法人研修として導入しました。社員のコミュニケーション力が目に見えて向上し、
+                                    チームの雰囲気も良くなりました。オーダーメイドの内容がとても良かったです。
+                                </p>
+                                <p class="reviews__meta">株式会社〇〇 人事部 ご担当者様</p>
+                            </div>
+                        </div>
+                        <div class="reviews__item-visual">
+                            <img src="./assets/images/review-03.jpg" alt="" width="200" height="200">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ==================== CTA Buttons (Gradient) ==================== -->
+        <section class="cta-buttons" id="cta-buttons" aria-label="お問い合わせ・資料請求">
+            <div class="cta-buttons__inner container">
+                <ul class="cta-buttons__list">
+                    <li class="cta-buttons__item">
+                        <a href="#" class="cta-buttons__btn cta-buttons__btn--download">資料ダウンロード</a>
+                    </li>
+                    <li class="cta-buttons__item">
+                        <a href="#contact" class="cta-buttons__btn cta-buttons__btn--contact">お問い合わせ</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ==================== Profile (Instructor) ==================== -->
+        <section class="profile" id="profile" aria-labelledby="profile-heading">
+            <div class="profile__inner container">
+                <h2 class="profile__heading" id="profile-heading">講師紹介</h2>
+                <div class="profile__main">
+                    <div class="profile__visual">
+                        <img src="./assets/images/profile.jpg" alt="講師 山田 花子" width="320" height="400">
+                    </div>
+                    <div class="profile__content">
+                        <p class="profile__role">代表講師 / ビジネスコミュニケーションアドバイザー</p>
+                        <h3 class="profile__name">山田 花子</h3>
+                        <p class="profile__bio">
+                            大手企業での営業・人事経験を経て、独立。
+                            これまで500名以上のビジネスパーソンにコミュニケーションスキルの指導を行う。
+                            「話す力は、誰でも身につけられるスキル」という信念のもと、
+                            一人ひとりの可能性を引き出す指導を心がけている。
+                        </p>
+                    </div>
+                </div>
+                <ul class="profile__credentials">
+                    <li class="profile__credential">
+                        <h4 class="profile__credential-title">保有資格・認定</h4>
+                        <p class="profile__credential-text">
+                            国家資格キャリアコンサルタント / ビジネスコミュニケーション検定1級 /
+                            プレゼンテーションスキル認定講師
+                        </p>
+                    </li>
+                    <li class="profile__credential">
+                        <h4 class="profile__credential-title">メディア出演・講演実績</h4>
+                        <p class="profile__credential-text">
+                            各種ビジネス雑誌への寄稿、企業研修講師として年間100回以上の講演実績
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ==================== Mid Banner ==================== -->
+        <section class="mid-banner" id="mid-banner" aria-labelledby="mid-banner-heading">
+            <div class="mid-banner__bg">
+                <img src="./assets/images/mid-banner.jpg" alt="" class="mid-banner__bg-image" width="1920" height="400">
+            </div>
+            <div class="mid-banner__inner container">
+                <h2 class="mid-banner__heading" id="mid-banner-heading">
+                    あなたの「話す力」が、<br>
+                    未来を変える第一歩になる
+                </h2>
+            </div>
+        </section>
+
+        <!-- ==================== Staff ==================== -->
+        <section class="staff" id="staff" aria-labelledby="staff-heading">
+            <div class="staff__inner container">
+                <div class="staff__ribbon ribbon-heading">
+                    <h2 class="ribbon-heading__text" id="staff-heading">スタッフ紹介</h2>
+                </div>
+                <ul class="staff__list">
+                    <li class="staff__member">
+                        <div class="staff__avatar">
+                            <img src="./assets/images/staff-01.jpg" alt="佐藤 美咲" width="140" height="140">
+                        </div>
+                        <p class="staff__name">佐藤 美咲</p>
+                        <p class="staff__role">コミュニケーション講師</p>
+                    </li>
+                    <li class="staff__member">
+                        <div class="staff__avatar">
+                            <img src="./assets/images/staff-02.jpg" alt="田中 健太" width="140" height="140">
+                        </div>
+                        <p class="staff__name">田中 健太</p>
+                        <p class="staff__role">プレゼン指導担当</p>
+                    </li>
+                    <li class="staff__member">
+                        <div class="staff__avatar">
+                            <img src="./assets/images/staff-03.jpg" alt="鈴木 愛" width="140" height="140">
+                        </div>
+                        <p class="staff__name">鈴木 愛</p>
+                        <p class="staff__role">カウンセラー</p>
+                    </li>
+                    <li class="staff__member">
+                        <div class="staff__avatar">
+                            <img src="./assets/images/staff-04.jpg" alt="高橋 誠" width="140" height="140">
+                        </div>
+                        <p class="staff__name">高橋 誠</p>
+                        <p class="staff__role">法人研修担当</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ==================== FAQ ==================== -->
+        <section class="faq" id="faq" aria-labelledby="faq-heading">
+            <div class="faq__inner container">
+                <h2 class="faq__heading" id="faq-heading">よくある質問</h2>
+                <dl class="faq__list">
+                    <div class="faq__item">
+                        <dt class="faq__question">
+                            <span class="faq__label faq__label--q">Q</span>
+                            <span class="faq__question-text">初心者でも受講できますか？</span>
+                        </dt>
+                        <dd class="faq__answer">
+                            <span class="faq__label faq__label--a">A</span>
+                            <p class="faq__answer-text">
+                                はい、もちろんです。受講者の約半数が初心者からスタートしています。
+                                基礎から丁寧に指導いたしますので、安心してご参加ください。
+                            </p>
+                        </dd>
+                    </div>
+                    <div class="faq__item">
+                        <dt class="faq__question">
+                            <span class="faq__label faq__label--q">Q</span>
+                            <span class="faq__question-text">オンラインでの受講は可能ですか？</span>
+                        </dt>
+                        <dd class="faq__answer">
+                            <span class="faq__label faq__label--a">A</span>
+                            <p class="faq__answer-text">
+                                はい、オンラインでの受講にも対応しております。
+                                対面・オンラインどちらも同じクオリティの指導をご提供いたします。
+                            </p>
+                        </dd>
+                    </div>
+                    <div class="faq__item">
+                        <dt class="faq__question">
+                            <span class="faq__label faq__label--q">Q</span>
+                            <span class="faq__question-text">法人研修の費用はどのくらいですか？</span>
+                        </dt>
+                        <dd class="faq__answer">
+                            <span class="faq__label faq__label--a">A</span>
+                            <p class="faq__answer-text">
+                                研修内容・人数・期間によって異なります。
+                                まずはお気軽にお問い合わせください。無料でお見積りいたします。
+                            </p>
+                        </dd>
+                    </div>
+                    <div class="faq__item">
+                        <dt class="faq__question">
+                            <span class="faq__label faq__label--q">Q</span>
+                            <span class="faq__question-text">無料カウンセリングでは何をしますか？</span>
+                        </dt>
+                        <dd class="faq__answer">
+                            <span class="faq__label faq__label--a">A</span>
+                            <p class="faq__answer-text">
+                                現在の課題や目標をお聞きし、最適な学習プランをご提案いたします。
+                                勧誘は一切行いませんので、お気軽にご参加ください。
+                            </p>
+                        </dd>
+                    </div>
+                    <div class="faq__item">
+                        <dt class="faq__question">
+                            <span class="faq__label faq__label--q">Q</span>
+                            <span class="faq__question-text">途中でプランの変更はできますか？</span>
+                        </dt>
+                        <dd class="faq__answer">
+                            <span class="faq__label faq__label--a">A</span>
+                            <p class="faq__answer-text">
+                                はい、可能です。学習の進捗や目標の変化に合わせて、
+                                プランの変更やアップグレードをご相談いただけます。
+                            </p>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <!-- ==================== Contact ==================== -->
+        <section class="contact" id="contact" aria-labelledby="contact-heading">
+            <div class="contact__inner container">
+                <div class="contact__ribbon ribbon-heading">
+                    <h2 class="ribbon-heading__text" id="contact-heading">お問い合わせ</h2>
+                </div>
+                <div class="contact__intro">
+                    <div class="contact__intro-visual">
+                        <img src="./assets/images/contact.jpg" alt="お問い合わせ" width="400" height="280">
+                    </div>
+                    <ul class="contact__highlights">
+                        <li class="contact__highlight">
+                            <div class="contact__highlight-circle">
+                                <p class="contact__highlight-text">無料<br>カウンセリング</p>
+                            </div>
+                        </li>
+                        <li class="contact__highlight">
+                            <div class="contact__highlight-circle">
+                                <p class="contact__highlight-text">24時間<br>以内に返信</p>
+                            </div>
+                        </li>
+                        <li class="contact__highlight">
+                            <div class="contact__highlight-circle">
+                                <p class="contact__highlight-text">しつこい<br>勧誘なし</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <form class="contact__form" action="#" method="post">
+                    <div class="contact__field">
+                        <label class="contact__label" for="contact-name">お名前<span
+                                class="contact__required">必須</span></label>
+                        <input class="contact__input" type="text" id="contact-name" name="name" required
+                            placeholder="山田 太郎">
+                    </div>
+                    <div class="contact__field">
+                        <label class="contact__label" for="contact-email">メールアドレス<span
+                                class="contact__required">必須</span></label>
+                        <input class="contact__input" type="email" id="contact-email" name="email" required
+                            placeholder="example@email.com">
+                    </div>
+                    <div class="contact__field">
+                        <label class="contact__label" for="contact-phone">電話番号</label>
+                        <input class="contact__input" type="tel" id="contact-phone" name="phone"
+                            placeholder="090-1234-5678">
+                    </div>
+                    <div class="contact__field">
+                        <label class="contact__label" for="contact-message">お問い合わせ内容<span
+                                class="contact__required">必須</span></label>
+                        <textarea class="contact__textarea" id="contact-message" name="message" rows="6" required
+                            placeholder="ご質問・ご要望をご記入ください"></textarea>
+                    </div>
+                    <div class="contact__submit">
+                        <button type="submit" class="contact__btn btn btn--primary">送信する</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== Footer ==================== -->
+    <footer class="footer" id="footer">
+        <div class="footer__inner container">
+            <div class="footer__brand">
+                <a href="#top" class="footer__logo" aria-label="トップページへ">
+                    <img src="./assets/images/logo-white.svg" alt="ロゴ" width="180" height="40">
+                </a>
+                <address class="footer__address">
+                    〒000-0000 東京都〇〇区〇〇 0-0-0<br>
+                    TEL: 00-0000-0000
+                </address>
+            </div>
+            <div class="footer__social">
+                <p class="footer__social-label">Follow Us</p>
+                <ul class="footer__social-list">
+                    <li class="footer__social-item">
+                        <a href="#" class="footer__social-link" aria-label="Instagram">
+                            <img src="./assets/images/icon-instagram.svg" alt="" width="24" height="24">
+                        </a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a href="#" class="footer__social-link" aria-label="X（旧Twitter）">
+                            <img src="./assets/images/icon-x.svg" alt="" width="24" height="24">
+                        </a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a href="#" class="footer__social-link" aria-label="Facebook">
+                            <img src="./assets/images/icon-facebook.svg" alt="" width="24" height="24">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer__copyright">
+            <small>&copy; 2026 ビジネススタッフ養成講座 All Rights Reserved.</small>
+        </p>
+    </footer>
+
+    <script src="./assets/js/main.js" defer></script>
+</body>
+
+</html>
