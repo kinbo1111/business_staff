@@ -9,24 +9,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>ビジネススタッフ養成講座</title>
+    <title>働く人と組織を再生する、実践メソッド</title>
 </head>
 
 <body id="top">
-    <!-- ==================== Header ==================== -->
     <header class="header" id="header">
         <div class="header__inner container">
-            <a href="#top" class="header__logo" aria-label="トップページへ">
-                <img src="./assets/images/logo.svg" alt="ロゴ" width="180" height="40">
+            <a href="#top" class="header__logo" aria-label="働く人と組織を再生する、実践メソッド">
+                <img src="./assets/images/logo.png" alt="" width="44" height="44">
+                <p class="header__logo-text">働く人と組織を再生する、実践メソッド</p>
             </a>
             <nav class="header__nav" aria-label="メインナビゲーション">
                 <ul class="header__nav-list">
-                    <li class="header__nav-item"><a href="#concept">サービス</a></li>
-                    <li class="header__nav-item"><a href="#pricing">料金</a></li>
-                    <li class="header__nav-item"><a href="#flow">ご利用の流れ</a></li>
-                    <li class="header__nav-item"><a href="#faq">よくある質問</a></li>
+                    <li class="header__nav-item"><a href="#problem">課題</a></li>
+                    <li class="header__nav-item"><a href="#concept">セミナーについて</a></li>
+                    <li class="header__nav-item"><a href="#reasons">選ばれる理由</a></li>
+                    <li class="header__nav-item"><a href="#profile">講師紹介</a></li>
+                    <li class="header__nav-item"><a href="#reviews">受講者の声</a></li>
+                    <li class="header__nav-item"><a href="#faq">FAQ</a></li>
                 </ul>
-                <a href="#contact" class="header__contact btn btn--header">お問い合わせ</a>
             </nav>
             <button class="header__menu-btn" type="button" aria-label="メニューを開く" aria-expanded="false"
                 aria-controls="header-drawer">
@@ -37,40 +38,42 @@
         </div>
         <nav class="header__drawer" id="header-drawer" aria-label="モバイルメニュー" hidden>
             <ul class="header__drawer-list">
-                <li><a href="#concept">サービス</a></li>
-                <li><a href="#pricing">料金</a></li>
-                <li><a href="#flow">ご利用の流れ</a></li>
-                <li><a href="#faq">よくある質問</a></li>
-                <li><a href="#contact">お問い合わせ</a></li>
+                <li><a href="#problem">課題</a></li>
+                <li><a href="#concept">セミナーについて</a></li>
+                <li><a href="#reasons">選ばれる理由</a></li>
+                <li><a href="#profile">講師紹介</a></li>
+                <li><a href="#reviews">受講者の声</a></li>
+                <li><a href="#faq">FAQ</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <!-- ==================== Hero ==================== -->
-        <section class="hero" id="hero" aria-labelledby="hero-heading">
-            <div class="hero__bg">
-                <img src="./assets/images/hero-bg.jpg" alt="" class="hero__bg-image" width="1920" height="800">
-            </div>
-            <div class="hero__inner container">
-                <div class="hero__content">
-                    <div class="hero__box">
-                        <p class="hero__label">ビジネススタッフ養成講座</p>
-                        <h1 class="hero__heading" id="hero-heading">
-                            あなたの<span class="hero__heading-accent">「話す力」</span>が<br>
-                            ビジネスの武器になる
-                        </h1>
-                        <ul class="hero__points">
-                            <li class="hero__point">実践的なプレゼン・スピーチスキルを習得</li>
-                            <li class="hero__point">少人数制で一人ひとりに寄り添った指導</li>
-                            <li class="hero__point">現場ですぐに活かせる実務力を身につける</li>
-                        </ul>
-                        <a href="#contact" class="hero__cta btn btn--primary">無料カウンセリングはこちら</a>
+        <section class="hero" id="hero">
+            <div class="hero__frame">
+                <div class="hero__inner container">
+                    <div class="hero__content">
+                        <div class="hero__box hero__box--main">
+                            <h1 class="hero__heading" id="hero-heading">
+                                「<span class="hero__heading-navy">働く人</span>」の<span
+                                    class="hero__heading-accent"><span class="hero__sparkle"
+                                        aria-hidden="true"><i></i><i></i><i></i></span>笑顔</span>が、「<span
+                                    class="hero__heading-navy">強い会社</span>」の土台になる
+                            </h1>
+                            <p class="hero__lead">
+                                数万人の本音に向き合ってきたプロが伝える、<br>人生と組織を変える実践メソッド
+                            </p>
+                        </div>
+                        <div class="hero__box hero__box--sub">
+                            <p class="hero__sub">
+                                日本一、組織づくりが難しいと言われる沖縄で磨かれた「人が自走する仕組み」を全国へ。 あなたが今、必要な一歩をここから ——
+                            </p>
+                        </div>
+                        <div class="hero__actions">
+                            <a href="#contact" class="hero__btn hero__btn--primary">セミナーに申し込む</a>
+                            <a href="#concept" class="hero__btn hero__btn--secondary">詳細を確認する</a>
+                        </div>
                     </div>
-                    <p class="hero__sub">
-                        人前で話すことに自信が持てない方も、<br>
-                        プロの講師が丁寧にサポートします。
-                    </p>
                 </div>
             </div>
         </section>

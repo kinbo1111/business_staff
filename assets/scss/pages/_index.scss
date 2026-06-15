@@ -1,156 +1,423 @@
-// =============================================================================
-// Layout
-// =============================================================================
-
-// section spacing, page layout
-
-
-// =============================================================================
-// Components
-// =============================================================================
-
-// .btn, .ribbon-heading, shared UI
-
-
-// =============================================================================
-// Header
-// =============================================================================
-
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: #fff;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.4rem;
+    min-height: 70px;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+
+    @include md {
+      padding-top: 1.2rem;
+      padding-bottom: 1.2rem;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+    min-width: 0;
+
+    img {
+      width: 38px;
+      height: 40px;
+      flex-shrink: 0;
+      object-fit: contain;
+    }
+  }
+
+  &__logo-text {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1;
+    color: $font_main;
+    letter-spacing: 0;
+  }
+
+  &__nav {
+    flex-shrink: 0;
+
+    @include md {
+      display: none;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__nav-item {
+    a {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1;
+      color: $font_main;
+      white-space: nowrap;
+      transition: color 0.2s ease, opacity 0.2s ease;
+      letter-spacing: 0;
+      &:hover {
+        color: $font_main;
+      }
+    }
+  }
+
+  &__menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 4rem;
+    height: 4rem;
+    flex-shrink: 0;
+
+    @include md {
+      display: flex;
+    }
+  }
+
+  &__menu-bar {
+    display: block;
+    width: 2.4rem;
+    height: 0.2rem;
+    background-color: $font_main;
+    border-radius: 0.1rem;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  &__menu-btn[aria-expanded="true"] {
+    .header__menu-bar:nth-child(1) {
+      transform: translateY(0.7rem) rotate(45deg);
+    }
+
+    .header__menu-bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .header__menu-bar:nth-child(3) {
+      transform: translateY(-0.7rem) rotate(-45deg);
+    }
+  }
+
+  &__drawer {
+    display: none;
+    background-color: #fff;
+    border-top: 1px solid #E0E0E0;
+
+    &.is-open {
+      @include md {
+        display: block;
+      }
+    }
+  }
+
+  &__drawer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 1.6rem 0 2.4rem;
+
+    a {
+      display: block;
+      padding: 1.4rem 2rem;
+      font-size: 15px;
+      font-weight: 500;
+      color: $font_main;
+      border-bottom: 1px solid #E0E0E0;
+      transition: color 0.2s ease, background-color 0.2s ease;
+
+      &:hover {
+        color: $font_main;
+        background-color: #E0E0E0;
+      }
+    }
+
+    li:last-child a {
+      border-bottom: none;
+    }
+  }
 }
-
-
-// =============================================================================
-// Hero
-// =============================================================================
 
 .hero {
+  position: relative;
+  width: 100%;
+  margin-top: 85px;
+
+  &__frame {
+    position: relative;
+    width: 100%;
+    min-height: 580px;
+    overflow: hidden;
+    background-image: url(../images/hero-bg.png);
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+    border-top-left-radius: 50% 72px;
+    border-top-right-radius: 50% 72px;
+
+    @include md {
+      min-height: 480px;
+      border-top-left-radius: 50% 48px;
+      border-top-right-radius: 50% 48px;
+    }
+
+    @include sm {
+      min-height: auto;
+      border-top-left-radius: 50% 32px;
+      border-top-right-radius: 50% 32px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    min-height: 580px;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    @include md {
+      min-height: 480px;
+      padding-top: 3.2rem;
+      padding-bottom: 3.2rem;
+    }
+
+    @include sm {
+      min-height: auto;
+      padding-top: 2.4rem;
+      padding-bottom: 2.4rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    max-width: 56rem;
+    width: 100%;
+
+    @include sm {
+      max-width: 100%;
+      gap: 1.2rem;
+    }
+  }
+
+  &__box {
+    &--main {
+      padding: 2.8rem 3.2rem;
+      background-color: rgba(255, 255, 255, 0.88);
+      border-radius: 2.4rem;
+
+      @include sm {
+        padding: 2rem 2rem;
+        border-radius: 1.6rem;
+      }
+    }
+
+    &--sub {
+      padding: 1.6rem 2.4rem;
+      background-color: #fff;
+      border: 1px solid $pink-border;
+      border-radius: 1.6rem;
+
+      @include sm {
+        padding: 1.4rem 1.6rem;
+      }
+    }
+  }
+
+  &__heading {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: $font_main;
+
+    @include lg {
+      font-size: 2.8rem;
+    }
+
+    @include md {
+      font-size: 2.4rem;
+    }
+
+    @include sm {
+      font-size: 2rem;
+      line-height: 1.6;
+    }
+  }
+
+  &__heading-navy {
+    color: $font_main;
+  }
+
+  &__heading-accent {
+    position: relative;
+    display: inline-block;
+    color: $pink;
+  }
+
+  &__sparkle {
+    position: absolute;
+    top: -1.2rem;
+    left: 50%;
+    display: flex;
+    align-items: flex-end;
+    gap: 0.3rem;
+    transform: translateX(-50%);
+
+    i {
+      display: block;
+      width: 0.5rem;
+      height: 0.5rem;
+      background-color: $pink;
+      transform: rotate(45deg);
+
+      &:nth-child(1) {
+        width: 0.4rem;
+        height: 0.4rem;
+        margin-bottom: 0.2rem;
+      }
+
+      &:nth-child(2) {
+        width: 0.6rem;
+        height: 0.6rem;
+        margin-bottom: 0.5rem;
+      }
+
+      &:nth-child(3) {
+        width: 0.4rem;
+        height: 0.4rem;
+        margin-bottom: 0.1rem;
+      }
+    }
+  }
+
+  &__lead {
+    margin-top: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.7;
+    color: $font_main;
+
+    @include sm {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__sub {
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: $font_main;
+
+    @include sm {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20rem;
+    padding: 1.4rem 2.8rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1;
+    border-radius: 999px;
+    transition: opacity 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+
+    @include sm {
+      min-width: 0;
+      flex: 1 1 100%;
+      padding: 1.3rem 2rem;
+      font-size: 1.4rem;
+    }
+
+    &--primary {
+      color: #fff;
+      background-color: $pink;
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+
+    &--secondary {
+      color: $pink;
+      background-color: #fff;
+      border: 1px solid $pink-border;
+
+      &:hover {
+        background-color: rgba($pink, 0.06);
+      }
+    }
+  }
 }
-
-
-// =============================================================================
-// Problem
-// =============================================================================
 
 .problem {
 }
 
-
-// =============================================================================
-// Concept
-// =============================================================================
-
 .concept {
 }
-
-
-// =============================================================================
-// Features
-// =============================================================================
 
 .features {
 }
 
-
-// =============================================================================
-// Pricing
-// =============================================================================
-
 .pricing {
 }
-
-
-// =============================================================================
-// Comparison
-// =============================================================================
 
 .comparison {
 }
 
-
-// =============================================================================
-// CTA Banner
-// =============================================================================
-
 .cta-banner {
 }
-
-
-// =============================================================================
-// Reasons
-// =============================================================================
 
 .reasons {
 }
 
-
-// =============================================================================
-// Flow
-// =============================================================================
-
 .flow {
 }
-
-
-// =============================================================================
-// Reviews
-// =============================================================================
 
 .reviews {
 }
 
-
-// =============================================================================
-// CTA Buttons
-// =============================================================================
-
 .cta-buttons {
 }
-
-
-// =============================================================================
-// Profile
-// =============================================================================
 
 .profile {
 }
 
-
-// =============================================================================
-// Mid Banner
-// =============================================================================
-
 .mid-banner {
 }
-
-
-// =============================================================================
-// Staff
-// =============================================================================
 
 .staff {
 }
 
-
-// =============================================================================
-// FAQ
-// =============================================================================
-
 .faq {
 }
 
-
-// =============================================================================
-// Contact
-// =============================================================================
-
 .contact {
 }
-
-
-// =============================================================================
-// Footer
-// =============================================================================
 
 .footer {
 }
