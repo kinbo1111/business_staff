@@ -9,6 +9,8 @@ html {
   overflow-x: hidden;
   width: 100%;
   margin: 0 auto;
+  scroll-behavior: smooth;
+  scroll-padding-top: 10rem;
   font-size: 0.69444vw;
   font-size: clamp(6px, 0.69444vw, 10px);
 
@@ -26,6 +28,10 @@ html {
 
   @include sm {
     font-size: 1.7361vw;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
   }
 }
 

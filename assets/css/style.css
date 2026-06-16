@@ -10,6 +10,8 @@ html {
   overflow-x: hidden;
   width: 100%;
   margin: 0 auto;
+  scroll-behavior: smooth;
+  scroll-padding-top: 10rem;
   font-size: 0.69444vw;
   font-size: clamp(6px, 0.69444vw, 10px);
 }
@@ -31,6 +33,11 @@ html {
 @media (max-width: 576px) {
   html {
     font-size: 1.7361vw;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
@@ -205,6 +212,72 @@ address {
 @media (max-width: 768px) {
   .floating-cta {
     display: none;
+  }
+}
+
+@keyframes stagger-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.75) translateY(1.2rem);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1.06) translateY(-0.2rem);
+  }
+  75% {
+    transform: scale(0.98) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.stagger-pop > .stagger-pop__item {
+  opacity: 0;
+}
+.stagger-pop.is-visible > .stagger-pop__item {
+  animation: stagger-pop 0.75s ease forwards;
+}
+.stagger-pop.is-visible > .stagger-pop__item:nth-child(1) {
+  animation-delay: 0s;
+}
+.stagger-pop.is-visible > .stagger-pop__item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stagger-pop.is-visible > .stagger-pop__item:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.stagger-pop.is-visible > .stagger-pop__item:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.stagger-pop.is-visible > .stagger-pop__item:nth-child(5) {
+  animation-delay: 0.8s;
+}
+.stagger-pop.is-visible > .stagger-pop__item:nth-child(6) {
+  animation-delay: 1s;
+}
+.stagger-pop.is-visible > .stagger-pop__item:nth-child(7) {
+  animation-delay: 1.2s;
+}
+.stagger-pop.is-visible > .stagger-pop__item:nth-child(8) {
+  animation-delay: 1.4s;
+}
+.stagger-pop.is-visible > .stagger-pop__item:nth-child(9) {
+  animation-delay: 1.6s;
+}
+.stagger-pop.is-visible > .stagger-pop__item:nth-child(10) {
+  animation-delay: 1.8s;
+}
+.stagger-pop.is-visible > .stagger-pop__item:nth-child(11) {
+  animation-delay: 2s;
+}
+.stagger-pop.is-visible > .stagger-pop__item:nth-child(12) {
+  animation-delay: 2.2s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .stagger-pop > .stagger-pop__item {
+    opacity: 1;
+    animation: none;
   }
 }
 

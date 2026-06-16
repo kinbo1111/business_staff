@@ -238,6 +238,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  const header = document.querySelector('.header');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (event) => {
+      const hash = anchor.getAttribute('href');
+      if (!hash || hash === '#') return;
+
+      const target = document.querySelector(hash);
+      if (!target) return;
+
+      event.preventDefault();
+
+      const headerHeight = header ? header.offsetHeight : 0;
+      const top = hash === '#top'
+        ? 0
+        : Math.max(0, target.getBoundingClientRect().top + window.scrollY - headerHeight);
+
+      window.scrollTo({
+        top,
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
+      });
+
+      history.pushState(null, '', hash);
+    });
+  });
+
   const floatingCta = document.querySelector('.floating-cta');
   const conceptSection = document.querySelector('#concept');
   const footer = document.querySelector('#footer');
@@ -278,6 +305,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       );
       headingLines.forEach((line) => observer.observe(line));
+    }
+  }
+
+  const staggerPops = document.querySelectorAll('.stagger-pop');
+  if (staggerPops.length > 0) {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      staggerPops.forEach((container) => container.classList.add('is-visible'));
+    } else {
+      const observer = new IntersectionObserver(
+        (entries, currentObserver) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            currentObserver.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.25,
+          rootMargin: '0px 0px -10% 0px',
+        }
+      );
+      staggerPops.forEach((container) => observer.observe(container));
     }
   }
 });
