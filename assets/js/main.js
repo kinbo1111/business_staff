@@ -215,4 +215,26 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  const inquirySection = document.querySelector('.inquiry');
+  if (inquirySection) {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      inquirySection.classList.add('is-animated');
+    } else {
+      const observer = new IntersectionObserver(
+        (entries, currentObserver) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            inquirySection.classList.add('is-animated');
+            currentObserver.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.25,
+        }
+      );
+      observer.observe(inquirySection);
+    }
+  }
 });

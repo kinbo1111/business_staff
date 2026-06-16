@@ -1871,18 +1871,8 @@
     border-radius: 999px;
     text-decoration: none;
     transition: opacity 0.2s ease;
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0.25rem;
-      left: 0.35rem;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-      background-color: $font_main;
-      border-radius: 999px;
-    }
+    animation: dokundokun 1300ms ease infinite;
+    box-shadow: 0.35rem 0.25rem 0 0 $font_main;
 
     >.stage__cta-label {
       display: flex;
@@ -1928,6 +1918,34 @@
       border-bottom: 1.5rem solid transparent;
       border-left: 1.2rem solid $subcolor;
     }
+  }
+}
+
+@keyframes dokundokun {
+  0% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.08);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.08);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage__cta {
+    animation: none;
   }
 }
 
@@ -2891,6 +2909,27 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    transform: translateY(28px) scale(0.94);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+
+    .is-animated & {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    &:nth-child(1) {
+      transition-delay: 0s;
+    }
+
+    &:nth-child(2) {
+      transition-delay: 0.12s;
+    }
+
+    &:nth-child(3) {
+      transition-delay: 0.24s;
+    }
+
     &:nth-child(1) {
       .inquiry__point-text {
         text-align: left;
@@ -2930,6 +2969,14 @@
     font-weight: 500;
     line-height: 1.6;
     letter-spacing: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inquiry__point {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 
