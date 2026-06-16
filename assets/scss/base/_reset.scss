@@ -11,8 +11,8 @@ html {
   margin: 0 auto;
   scroll-behavior: smooth;
   scroll-padding-top: 10rem;
-  font-size: 0.69444vw;
-  font-size: clamp(6px, 0.69444vw, 10px);
+  font-size: 0.8333vw;
+  font-size: clamp(6px, 0.8333vw, 10px);
 
   @include xl {
     font-size: 0.78125vw;
@@ -24,10 +24,16 @@ html {
 
   @include md {
     font-size: 1.30208vw;
+    scroll-padding-top: 8rem;
   }
 
   @include sm {
     font-size: 1.7361vw;
+  }
+
+  @include xs {
+    font-size: 10px;
+    scroll-padding-top: 7rem;
   }
 
   @media (prefers-reduced-motion: reduce) {
