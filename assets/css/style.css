@@ -2074,4 +2074,289 @@ address {
   object-fit: cover;
 }
 
+.profile {
+  position: relative;
+  padding: 8rem 0;
+}
+.profile__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile__badge {
+  position: relative;
+  width: 26.4rem;
+  height: 6rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #E8C7CE;
+  clip-path: polygon(35% 0, 100% 6%, 100% 88%, 62% 100%, 0 84%, 3% 9%);
+}
+.profile__badge::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border: 1px solid #E07A8A;
+  clip-path: polygon(35% 0, 100% 6%, 100% 88%, 62% 100%, 0 84%, 3% 9%);
+  pointer-events: none;
+}
+.profile__badge {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #E07A8A;
+  letter-spacing: 0;
+  text-align: center;
+}
+.profile__heading {
+  margin-top: 4rem;
+  font-size: 31px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #2F3E5C;
+  text-align: center;
+  letter-spacing: 0;
+}
+.profile__heading span {
+  font-size: 34px;
+  font-weight: 900;
+  font-style: italic;
+}
+.profile__main {
+  display: flex;
+  align-items: flex-start;
+  gap: 4rem;
+  width: 100%;
+  margin-top: 4rem;
+}
+@media (max-width: 1024px) {
+  .profile__main {
+    gap: 3rem;
+  }
+}
+@media (max-width: 768px) {
+  .profile__main {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3.2rem;
+  }
+}
+.profile__main > .profile__photo {
+  width: 35rem;
+  height: auto;
+}
+.profile__main > .profile__photo img {
+  width: 100%;
+  height: auto;
+}
+.profile__main > .profile__content {
+  flex: 1;
+  min-width: 0;
+  width: fit-content;
+}
+.profile__main > .profile__content > .profile__lead {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #2F3E5C;
+  letter-spacing: 0;
+  width: fit-content;
+}
+@media (max-width: 768px) {
+  .profile__main > .profile__content > .profile__lead {
+    font-size: 20px;
+  }
+}
+.profile__main > .profile__content > .profile__message {
+  max-width: 616px;
+  width: 100%;
+  margin-top: 2rem;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #2F3E5C;
+  letter-spacing: 0;
+}
+.profile__main > .profile__content > .profile__bio {
+  max-width: 600px;
+  width: 100%;
+  margin-top: 3rem;
+  padding: 3rem 2.4rem;
+  background-color: #FAF7F8;
+  border-radius: 3rem;
+}
+@media (max-width: 768px) {
+  .profile__main > .profile__content > .profile__bio {
+    padding: 2rem;
+  }
+}
+.profile__main > .profile__content > .profile__bio > .profile__bio-head > .profile__name {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #2F3E5C;
+  letter-spacing: 0;
+}
+.profile__main > .profile__content > .profile__bio > .profile__bio-head > .profile__name span {
+  font-size: 18px;
+  font-weight: 400;
+}
+.profile__main > .profile__content > .profile__bio > .profile__bio-head > .profile__name-en {
+  margin-top: 0.4rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+.profile__main > .profile__content > .profile__bio > .profile__career {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2.4rem;
+  margin-top: 1.6rem;
+}
+@media (max-width: 768px) {
+  .profile__main > .profile__content > .profile__bio > .profile__career {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+.profile__main > .profile__content > .profile__bio > .profile__career > .profile__career-main {
+  flex: 1;
+  max-width: 220px;
+  width: 100%;
+}
+.profile__main > .profile__content > .profile__bio > .profile__career > .profile__career-main > .profile__career-text {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #2F3E5C;
+  letter-spacing: 0;
+}
+.profile__main > .profile__content > .profile__bio > .profile__career > .profile__milestones {
+  flex-shrink: 0;
+  width: min(100%, 30rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.profile__main > .profile__content > .profile__bio > .profile__career > .profile__milestones > .profile__milestone {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #2F3E5C;
+  letter-spacing: 0;
+}
+.profile__main > .profile__content > .profile__bio > .profile__career > .profile__milestones > .profile__milestone::before {
+  content: "";
+  flex-shrink: 0;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-top: 1rem;
+  background-color: #2F3E5C;
+}
+.profile__main > .profile__content > .profile__bio > .profile__career > .profile__milestones > .profile__milestone > .profile__milestone-year {
+  flex-shrink: 0;
+  min-width: 4.8rem;
+  font-weight: 400;
+}
+.profile__main > .profile__content > .profile__bio > .profile__career > .profile__milestones > .profile__milestone > .profile__milestone-text {
+  flex: 1;
+  min-width: 0;
+}
+.profile__reasons {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3.2rem;
+  width: 100%;
+  margin-top: 2.6rem;
+}
+@media (max-width: 768px) {
+  .profile__reasons {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-top: 4rem;
+  }
+}
+.profile__reasons > .profile__reason > .profile__reason-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #2F3E5C;
+  letter-spacing: 0;
+}
+.profile__reasons > .profile__reason > .profile__reason-text {
+  margin-top: 1.6rem;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #2F3E5C;
+  letter-spacing: 0;
+}
+.profile__reasons > .profile__reason--boxed {
+  padding: 3.4rem 2.4rem;
+  background-color: #FAF7F8;
+  border: 3px solid #E8C7CE;
+  outline: 3px dashed #E8C7CE;
+  outline-offset: -7px;
+  border-radius: 30px;
+}
+.profile__reasons > .profile__reason--boxed .profile__reason-title {
+  font-size: 18px;
+}
+.profile__reasons > .profile__reason--highlight > .profile__reason-title {
+  position: relative;
+  width: fit-content;
+}
+.profile__reasons > .profile__reason--highlight > .profile__reason-title::before {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 9px;
+  background-color: #E07A8A;
+  z-index: -1;
+}
+
+.mid-banner {
+  position: relative;
+  padding: 4rem 0 5rem;
+  background-image: url(../images/mid_banner.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.mid-banner .container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 2rem;
+}
+.mid-banner .container > .mid-banner__heading {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #fff;
+  letter-spacing: 0;
+}
+.mid-banner .container > .mid-banner__text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #fff;
+  letter-spacing: 0;
+}
+
 /*# sourceMappingURL=style.css.map */
