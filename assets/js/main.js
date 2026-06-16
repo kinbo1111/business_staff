@@ -78,4 +78,63 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  const selectWrap = document.querySelector('.application__select-wrap');
+  if (selectWrap) {
+    const trigger = selectWrap.querySelector('.application__select-trigger');
+    const selectedText = selectWrap.querySelector('.application__select-text');
+    const options = selectWrap.querySelectorAll('.application__select-option');
+    const hiddenInput = selectWrap.querySelector('#issue');
+    const optionsList = selectWrap.querySelector('.application__select-options');
+
+    if (trigger && selectedText && hiddenInput && optionsList && options.length > 0) {
+      const closeSelect = () => {
+        selectWrap.classList.remove('is-open');
+        trigger.setAttribute('aria-expanded', 'false');
+        optionsList.hidden = true;
+      };
+
+      const openSelect = () => {
+        selectWrap.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+        optionsList.hidden = false;
+      };
+
+      trigger.addEventListener('click', () => {
+        const isOpen = selectWrap.classList.contains('is-open');
+        if (isOpen) {
+          closeSelect();
+        } else {
+          openSelect();
+        }
+      });
+
+      options.forEach((option) => {
+        option.addEventListener('click', () => {
+          const value = option.dataset.value || '';
+          selectedText.textContent = option.textContent || '';
+          hiddenInput.value = value;
+          options.forEach((item) => {
+            item.classList.remove('is-selected');
+            item.setAttribute('aria-selected', 'false');
+          });
+          option.classList.add('is-selected');
+          option.setAttribute('aria-selected', 'true');
+          closeSelect();
+        });
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!selectWrap.contains(event.target)) {
+          closeSelect();
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          closeSelect();
+        }
+      });
+    }
+  }
 });

@@ -818,43 +818,128 @@
                 </ul>
             </div>
         </section>
+        <section id="application" class="application">
+            <div class="application__inner container">
+                <h2 class="application__heading">
+                    <span class="application__heading-main">
+                        <span class="application__spark application__spark--left">
+                            <img src="./assets/images/application_left_mask.svg" alt="" width="26" height="21">
+                        </span>
+                        あなたのペースで大丈夫
+                        <span class="application__spark application__spark--right">
+                            <img src="./assets/images/application_right_mask.svg" alt="" width="26" height="21">
+                        </span>
+                    </span>
+                    <span class="application__heading-sub">まずは内容を知ることから始めてみませんか？</span>
+                </h2>
+                <form class="application__form" action="#" method="post">
+                    <div class="application__row">
+                        <label class="application__label" for="company">企業名<span
+                                class="application__badge is-required">必須</span></label>
+                        <input class="application__control" id="company" name="company" type="text"
+                            placeholder="〇〇株式会社、個人の方は個人と記入してください">
+                    </div>
+                    <div class="application__row">
+                        <label class="application__label" for="name">お名前<span
+                                class="application__badge is-required">必須</span></label>
+                        <input class="application__control" id="name" name="name" type="text"
+                            placeholder="お名前を入力してください">
+                    </div>
+                    <div class="application__row">
+                        <label class="application__label" for="email">メール<br>アドレス<span
+                                class="application__badge is-required">必須</span></label>
+                        <input class="application__control" id="email" name="email" type="email"
+                            placeholder="aaa@bbbb.ccc">
+                    </div>
+                    <div class="application__row">
+                        <label class="application__label" for="company-url">企業URL<span
+                                class="application__badge is-optional">任意</span></label>
+                        <input class="application__control" id="company-url" name="company-url" type="url"
+                            placeholder="HPをお持ちの場合、URLを入力してください">
+                    </div>
+                    <div class="application__row">
+                        <label class="application__label" for="issue">現在の<br>お悩み<span
+                                class="application__badge is-required">必須</span></label>
+                        <div class="application__select-wrap">
+                            <input type="hidden" id="issue" name="issue" value="">
+                            <button class="application__select-trigger" type="button" aria-expanded="false"
+                                aria-haspopup="listbox" aria-controls="issue-options">
+                                <span class="application__select-text">選択してください</span>
+                            </button>
+                            <ul class="application__select-options" id="issue-options" role="listbox" tabindex="-1"
+                                hidden>
+                                <li class="application__select-option is-selected" role="option" aria-selected="true"
+                                    data-value="">選択してください</li>
+                                <li class="application__select-option" role="option" aria-selected="false"
+                                    data-value="離職率を改善したい">離職率を改善したい</li>
+                                <li class="application__select-option" role="option" aria-selected="false"
+                                    data-value="社内の風通し（コミュニケーション）を良くしたい">社内の風通し（コミュニケーション）を良くしたい</li>
+                                <li class="application__select-option" role="option" aria-selected="false"
+                                    data-value="休職者の復職支援について相談したい">休職者の復職支援について相談したい</li>
+                                <li class="application__select-option" role="option" aria-selected="false"
+                                    data-value="休んでいることへの罪悪感がある">休んでいることへの罪悪感がある</li>
+                                <li class="application__select-option" role="option" aria-selected="false"
+                                    data-value="復職や次のステップが不安">復職や次のステップが不安</li>
+                                <li class="application__select-option" role="option" aria-selected="false"
+                                    data-value="その他">その他</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="application__row">
+                        <label class="application__label" for="detail">詳細<span
+                                class="application__badge is-optional">任意</span></label>
+                        <textarea class="application__control application__control--textarea" id="detail" name="detail"
+                            placeholder="問い合わせ内容を入力してください"></textarea>
+                    </div>
+                    <div class="application__submit-wrap">
+                        <button class="application__submit" type="submit">
+                            <p class="application__submit-label">送信する</p>
+                            <span class="application__submit-icon"></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
     </main>
 
     <footer class="footer" id="footer">
-        <div class="footer__inner container">
-            <div class="footer__brand">
-                <a href="#top" class="footer__logo">
-                    <img src="./assets/images/logo-white.svg" alt="ロゴ" width="180" height="40">
-                </a>
-                <address class="footer__address">
-                    〒000-0000 東京都〇〇区〇〇 0-0-0<br>
-                    TEL: 00-0000-0000
-                </address>
-            </div>
-            <div class="footer__social">
-                <p class="footer__social-label">Follow Us</p>
-                <ul class="footer__social-list">
-                    <li class="footer__social-item">
-                        <a href="#" class="footer__social-link">
-                            <img src="./assets/images/icon-instagram.svg" alt="" width="24" height="24">
+        <div class="footer__inner">
+            <ul class="footer__nav">
+                <li><a href="#problem">課題</a></li>
+                <li><a href="#method">メソッド</a></li>
+                <li><a href="#instructor">講師紹介</a></li>
+                <li><a href="#voice">受講者の声</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <div class="footer__body">
+                <div class="container">
+                    <div class="footer__left">
+                        <a href="#top" class="footer__logo">
+                            <img src="./assets/images/logo.png" alt="株式会社ビジネススタッフ">
                         </a>
-                    </li>
-                    <li class="footer__social-item">
-                        <a href="#" class="footer__social-link">
-                            <img src="./assets/images/icon-x.svg" alt="" width="24" height="24">
-                        </a>
-                    </li>
-                    <li class="footer__social-item">
-                        <a href="#" class="footer__social-link">
-                            <img src="./assets/images/icon-facebook.svg" alt="" width="24" height="24">
-                        </a>
-                    </li>
-                </ul>
+                        <p class="footer__tagline">働く人と組織を再生する、実践メソッド</p>
+                        <div class="footer__company">
+                            <p>株式会社ビジネススタッフ</p>
+                            <p class="url">企業HP  https://www.b-staff.net/</p>
+                        </div>
+                    </div>
+                    <div class="footer__right">
+                        <p class="footer__message">
+                            数万人の本音に向き合ってきたプロが伝える、<br>
+                            <span>人生</span>と
+                            <span>組織</span>を
+                            変える実践メソッド
+                        </p>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <div class="container">
+                        <small class="footer__copyright">© 2026 株式会社ビジネススタッフ All Rights Reserved.</small>
+                        <a class="footer__privacy" href="#">privacy policy</a>
+                    </div>
+                </div>
             </div>
         </div>
-        <p class="footer__copyright">
-            <small>&copy; 2026 ビジネススタッフ養成講座 All Rights Reserved.</small>
-        </p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
