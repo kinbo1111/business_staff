@@ -137,6 +137,27 @@ address {
   }
 }
 
+.heading-line {
+  display: block;
+  height: auto;
+  object-fit: contain;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.heading-line.is-visible {
+  opacity: 1;
+  transform: scaleX(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .heading-line {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -668,10 +689,7 @@ address {
   letter-spacing: 0;
 }
 .features__intro > .features__heading .features__heading-line {
-  display: block;
   width: 137px;
-  height: auto;
-  object-fit: contain;
 }
 .features__intro > .features__grid {
   position: relative;
@@ -935,9 +953,7 @@ address {
   text-align: center;
 }
 .features__recommend > .features__recommend-heading .features__recommend-heading-line {
-  display: block;
   width: 137px;
-  height: auto;
 }
 .features__recommend > .features__recommend-heading .features__recommend-icon {
   position: absolute;
@@ -1061,6 +1077,9 @@ address {
   border-left: 2px solid currentColor;
   transform: rotate(-45deg);
 }
+.features__recommend > .features__audience > .features__audience-card > .features__audience-arrow {
+  animation: arrow-bounce-down 1300ms ease infinite;
+}
 .features__recommend > .features__audience > .features__audience-card > .features__audience-arrow > span {
   display: flex;
   width: 20px;
@@ -1090,6 +1109,7 @@ address {
   text-align: center;
   letter-spacing: 0;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  animation: dokundokun 1300ms ease infinite;
 }
 .features__recommend > .features__audience > .features__audience-card--individual {
   outline: 2px dashed #E07A8A;
@@ -1841,8 +1861,27 @@ address {
     transform: scale(1);
   }
 }
+@keyframes arrow-bounce-down {
+  0% {
+    transform: translateY(0);
+  }
+  15% {
+    transform: translateY(6px);
+  }
+  30% {
+    transform: translateY(0);
+  }
+  45% {
+    transform: translateY(6px);
+  }
+  70% {
+    transform: translateY(0);
+  }
+}
 @media (prefers-reduced-motion: reduce) {
-  .stage__cta {
+  .stage__cta,
+  .features__audience-result,
+  .features__audience-arrow {
     animation: none;
   }
 }
@@ -1909,11 +1948,8 @@ address {
   background-color: #E07A8A;
 }
 .reason__heading-line {
-  display: block;
   width: 13.7rem;
-  height: auto;
   margin-top: 0.4rem;
-  object-fit: contain;
 }
 .reason__list {
   list-style: none;
@@ -3162,3 +3198,5 @@ address {
   text-decoration: none;
   letter-spacing: 0;
 }
+
+/*# sourceMappingURL=style.css.map */
