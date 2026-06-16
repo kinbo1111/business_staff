@@ -36,25 +36,51 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-  var voiceSlider = new Swiper(".voice__slider", {
-    loop: true,
-    slidesPerView: 'auto',
-    speed: 12000,
-    allowTouchMove: false,
-    loopAdditionalSlides: 5,
-    spaceBetween: 28,
-    autoplay: {
-      delay: 0,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
-      waitForTransition: true,
-    },
-    breakpoints: {
-      768: {
-        spaceBetween: 24,
+  const voiceSliderEl = document.querySelector('.voice__slider');
+
+  if (voiceSliderEl && typeof Swiper !== 'undefined') {
+    const wrapper = voiceSliderEl.querySelector('.swiper-wrapper');
+    const originalSlides = wrapper
+      ? Array.from(wrapper.querySelectorAll(':scope > .swiper-slide'))
+      : [];
+
+    if (wrapper && originalSlides.length > 0) {
+      const spaceBetween = window.innerWidth <= 768 ? 24 : 28;
+      const slideWidth = originalSlides[0].getBoundingClientRect().width || 448;
+      const visibleSlides = Math.ceil(window.innerWidth / Math.max(slideWidth + spaceBetween, 1));
+      const minSlides = Math.max(originalSlides.length * 2, visibleSlides * 2 + originalSlides.length);
+
+      let cloneIndex = 0;
+      while (wrapper.children.length < minSlides) {
+        const clone = originalSlides[cloneIndex % originalSlides.length].cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        wrapper.appendChild(clone);
+        cloneIndex += 1;
+      }
+    }
+
+    new Swiper(voiceSliderEl, {
+      loop: true,
+      slidesPerView: 'auto',
+      speed: 12000,
+      allowTouchMove: false,
+      loopAdditionalSlides: originalSlides.length,
+      spaceBetween: 28,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
       },
-    },
-  });
+      breakpoints: {
+        320: {
+          spaceBetween: 24,
+        },
+        769: {
+          spaceBetween: 28,
+        },
+      },
+    });
+  }
 
   const faqItems = document.querySelectorAll('.faq__item');
   faqItems.forEach((item) => {

@@ -4467,11 +4467,11 @@ address {
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100%;
+  width: 65%;
   height: 100%;
   background-image: url(../images/cta_mask.svg);
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
 }
 .footer__body .container {
