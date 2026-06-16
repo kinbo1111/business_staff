@@ -158,6 +158,56 @@ address {
   }
 }
 
+.floating-cta {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: 60px;
+  height: 240px;
+  padding: 2.4rem 1rem;
+  background-color: #E07A8A;
+  border-radius: 2.5rem 0 0 2.5rem;
+  box-shadow: -2px 4px 12px rgba(47, 62, 92, 0.2);
+  border: 2px solid #3A4A6B;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(100%, -50%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.floating-cta.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(0, -50%);
+}
+.floating-cta__main {
+  writing-mode: vertical-rl;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+.floating-cta__sub {
+  writing-mode: vertical-rl;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .floating-cta {
+    display: none;
+  }
+}
+
 .header {
   position: fixed;
   top: 0;

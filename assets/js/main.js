@@ -238,6 +238,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  const floatingCta = document.querySelector('.floating-cta');
+  const conceptSection = document.querySelector('#concept');
+  const footer = document.querySelector('#footer');
+
+  if (floatingCta && conceptSection && footer) {
+    const updateFloatingCta = () => {
+      const conceptTop = conceptSection.getBoundingClientRect().top;
+      const footerTop = footer.getBoundingClientRect().top;
+      const viewportHeight = window.innerHeight;
+      const isConceptVisible = conceptTop < viewportHeight * 0.75;
+      const isBeforeFooter = footerTop > viewportHeight;
+
+      floatingCta.classList.toggle('is-visible', isConceptVisible && isBeforeFooter);
+    };
+
+    updateFloatingCta();
+    window.addEventListener('scroll', updateFloatingCta, { passive: true });
+    window.addEventListener('resize', updateFloatingCta);
+  }
+
   const headingLines = document.querySelectorAll('.heading-line');
   if (headingLines.length > 0) {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
