@@ -285,11 +285,11 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', updateFloatingCta);
   }
 
-  const headingLines = document.querySelectorAll('.heading-line');
-  if (headingLines.length > 0) {
+  const revealOnScroll = document.querySelectorAll('.heading-line, .highlight-line');
+  if (revealOnScroll.length > 0) {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduceMotion || !('IntersectionObserver' in window)) {
-      headingLines.forEach((line) => line.classList.add('is-visible'));
+      revealOnScroll.forEach((element) => element.classList.add('is-visible'));
     } else {
       const observer = new IntersectionObserver(
         (entries, currentObserver) => {
@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
           rootMargin: '0px 0px -10% 0px',
         }
       );
-      headingLines.forEach((line) => observer.observe(line));
+      revealOnScroll.forEach((element) => observer.observe(element));
     }
   }
 
