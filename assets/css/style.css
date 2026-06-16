@@ -2359,4 +2359,121 @@ address {
   letter-spacing: 0;
 }
 
+.voice {
+  position: relative;
+  padding: 8rem 0;
+}
+.voice::before {
+  content: "";
+  position: absolute;
+  bottom: 4.7rem;
+  right: 0;
+  width: 41.7rem;
+  height: 34.8rem;
+  background-color: rgba(232, 199, 206, 0.2);
+  clip-path: polygon(49% 0, 100% 0, 100% 100%, 16% 100%, 0 30%);
+  z-index: -1;
+}
+.voice::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 54.5rem;
+  height: 66.6rem;
+  background-color: rgba(232, 199, 206, 0.2);
+  clip-path: polygon(54% 0, 100% 38%, 63% 100%, 0 84%, 0 0);
+  z-index: -1;
+}
+.voice .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.voice .voice__heading {
+  width: fit-content;
+  margin-bottom: 4rem;
+}
+.voice .voice__heading img {
+  width: 288px;
+  height: 82px;
+  object-fit: contain;
+}
+.voice .voice__sub {
+  font-size: 31px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #2F3E5C;
+  letter-spacing: 0;
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+@media (max-width: 768px) {
+  .voice .voice__sub {
+    font-size: 24px;
+    margin-bottom: 2.8rem;
+  }
+}
+.voice__slider {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 0.4rem;
+}
+.voice__slider .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+.voice__slider .swiper-slide {
+  width: 28rem;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .voice__slider .swiper-slide {
+    width: 24rem;
+  }
+}
+.voice__slider .voice__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  min-height: 37.5rem;
+  padding: 3.7rem 2rem 1.4rem 2rem;
+  border: 1px solid #E07A8A;
+  border-radius: 3rem;
+}
+.voice__slider .voice__card > .voice__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15rem;
+  height: 15rem;
+  margin: 0;
+}
+.voice__slider .voice__card > .voice__avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.voice__slider .voice__card > .voice__info {
+  margin-top: 2rem;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #2F3E5C;
+  text-align: center;
+  letter-spacing: 0;
+}
+.voice__slider .voice__card > .voice__text {
+  width: 100%;
+  margin-top: 1.2rem;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #2F3E5C;
+  text-align: left;
+  letter-spacing: 0;
+}
+
 /*# sourceMappingURL=style.css.map */

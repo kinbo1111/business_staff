@@ -2478,4 +2478,127 @@
   }
 }
 
+.voice {
+  position: relative;
+  padding: 8rem 0;
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 4.7rem;
+    right: 0;
+    width: 41.7rem;
+    height: 34.8rem;
+    background-color: rgba(#E8C7CE, 0.2);
+    clip-path: polygon(49% 0, 100% 0, 100% 100%, 16% 100%, 0 30%);
+    z-index: -1;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 54.5rem;
+    height: 66.6rem;
+    background-color: rgba(#E8C7CE, 0.2);
+    clip-path: polygon(54% 0, 100% 38%, 63% 100%, 0 84%, 0 0);
+    z-index: -1;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .voice__heading {
+    width: fit-content;
+    margin-bottom: 4rem;
+    img {
+      width: 288px;
+      height: 82px;
+      object-fit: contain;
+    }
+  }
+  .voice__sub {
+    font-size: 31px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: $font_main;
+    letter-spacing: 0;
+    text-align: center;
+    margin-bottom: 3.5rem;
+
+    @include md {
+      font-size: 24px;
+      margin-bottom: 2.8rem;
+    }
+  }
+
+  &__slider {
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 0.4rem;
+
+    .swiper-wrapper {
+      transition-timing-function: linear !important;
+    }
+
+    .swiper-slide {
+      width: 28rem;
+      height: auto;
+
+      @include md {
+        width: 24rem;
+      }
+    }
+
+    .voice__card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      min-height: 37.5rem;
+      padding: 3.7rem 2rem 1.4rem 2rem;
+      border: 1px solid $accent-color;
+      border-radius: 3rem;
+
+      > .voice__avatar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 15rem;
+        height: 15rem;
+        margin: 0;
+
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      > .voice__info {
+        margin-top: 2rem;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 1.4;
+        color: $font_main;
+        text-align: center;
+        letter-spacing: 0;
+      }
+
+      > .voice__text {
+        width: 100%;
+        margin-top: 1.2rem;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+        color: $font_main;
+        text-align: left;
+        letter-spacing: 0;
+      }
+    }
+  }
+}
+
 .footer {}
