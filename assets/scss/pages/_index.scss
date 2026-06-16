@@ -402,21 +402,17 @@
     color: #fff;
     letter-spacing: 2%;
     border: 1px solid #FFFFFF;
+    text-decoration: none;
+    box-shadow: 0.3rem 0.2rem 0 $main-color;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      box-shadow: unset;
+      transform: translateY(0.2rem);
+    }
 
     span {
       font-size: 16px;
-    }
-
-    &::after {
-      content: '';
-      width: 346px;
-      height: 57px;
-      background-color: $main-color;
-      position: absolute;
-      top: 1.82px;
-      left: 1px;
-      z-index: -1;
-      border-radius: 999px;
     }
   }
 }
@@ -1960,6 +1956,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .stage__cta,
+  .application__submit,
   .features__audience-result,
   .features__audience-arrow {
     animation: none;
@@ -2669,6 +2666,15 @@
     letter-spacing: 0;
     white-space: nowrap;
 
+    &-text {
+      display: inline-block;
+      --highlight-left: 0;
+      --highlight-margin-left: 0;
+      --highlight-width: 100%;
+      --highlight-height: 0.9rem;
+      --highlight-bottom: 0.1rem;
+    }
+
     &::before {
       left: 0;
     }
@@ -3203,18 +3209,19 @@
       background-color: $accent-color;
       border-radius: 30px;
       text-decoration: none;
-      transition: opacity 0.2s ease;
-  
+      border: none;
+      cursor: pointer;
+      box-shadow: 0.35rem 0.25rem 0 $main-color;
+      transition: box-shadow 0.3s ease, transform 0.3s ease, opacity 0.2s ease;
+      animation: dokundokun 1300ms ease infinite;
+
+      &:hover:not(:disabled) {
+        box-shadow: unset;
+        transform: translateY(0.2rem);
+      }
+
       &::after {
-        content: "";
-        position: absolute;
-        top: 0.25rem;
-        left: 0.35rem;
-        z-index: -1;
-        width: 100%;
-        height: 100%;
-        background-color: $main-color;
-        border-radius: 30px;
+        content: none;
       }
   
       >.application__submit-label {
@@ -3239,6 +3246,7 @@
       &:disabled {
         opacity: 0.6;
         cursor: not-allowed;
+        animation: none;
       }
     }
 

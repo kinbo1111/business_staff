@@ -217,29 +217,39 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const inquirySection = document.querySelector('.inquiry');
-  if (inquirySection) {
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduceMotion || !('IntersectionObserver' in window)) {
-      inquirySection.classList.add('is-animated');
-    } else {
-      const observer = new IntersectionObserver(
-        (entries, currentObserver) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            inquirySection.classList.add('is-animated');
-            currentObserver.unobserve(entry.target);
-          });
-        },
-        {
-          threshold: 0.25,
-        }
-      );
-      observer.observe(inquirySection);
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const initScrollReveal = (selector, visibleClass = 'is-visible') => {
+    const elements = document.querySelectorAll(selector);
+    if (!elements.length) return;
+
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      elements.forEach((element) => element.classList.add(visibleClass));
+      return;
     }
+
+    const observer = new IntersectionObserver(
+      (entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add(visibleClass);
+          currentObserver.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: '0px 0px -10% 0px',
+      }
+    );
+
+    elements.forEach((element) => observer.observe(element));
+  };
+
+  if (inquirySection) {
+    initScrollReveal('.inquiry', 'is-animated');
   }
 
   const header = document.querySelector('.header');
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (event) => {
@@ -285,49 +295,16 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', updateFloatingCta);
   }
 
-  const revealOnScroll = document.querySelectorAll('.heading-line, .highlight-line');
-  if (revealOnScroll.length > 0) {
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduceMotion || !('IntersectionObserver' in window)) {
-      revealOnScroll.forEach((element) => element.classList.add('is-visible'));
+  const heroContent = document.querySelector('.hero .fade-up');
+  if (heroContent) {
+    if (prefersReducedMotion) {
+      heroContent.classList.add('is-visible');
     } else {
-      const observer = new IntersectionObserver(
-        (entries, currentObserver) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add('is-visible');
-            currentObserver.unobserve(entry.target);
-          });
-        },
-        {
-          threshold: 0.2,
-          rootMargin: '0px 0px -10% 0px',
-        }
-      );
-      revealOnScroll.forEach((element) => observer.observe(element));
+      window.setTimeout(() => heroContent.classList.add('is-visible'), 120);
     }
   }
 
-  const staggerPops = document.querySelectorAll('.stagger-pop');
-  if (staggerPops.length > 0) {
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduceMotion || !('IntersectionObserver' in window)) {
-      staggerPops.forEach((container) => container.classList.add('is-visible'));
-    } else {
-      const observer = new IntersectionObserver(
-        (entries, currentObserver) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add('is-visible');
-            currentObserver.unobserve(entry.target);
-          });
-        },
-        {
-          threshold: 0.25,
-          rootMargin: '0px 0px -10% 0px',
-        }
-      );
-      staggerPops.forEach((container) => observer.observe(container));
-    }
-  }
+  initScrollReveal('.heading-line, .highlight-line');
+  initScrollReveal('.stagger-pop');
+  initScrollReveal('.fade-up, .fade-up--self');
 });
