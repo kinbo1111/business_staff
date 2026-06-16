@@ -1175,18 +1175,12 @@ address {
   background-color: #fff;
   border-radius: 999px;
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  box-shadow: 0.3rem 0.2rem 0 #3A4A6B;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
-.cta-banner__btn::after {
-  content: "";
-  position: absolute;
-  top: 0.2rem;
-  left: 0.3rem;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background-color: #3A4A6B;
-  border-radius: 999px;
+.cta-banner__btn:hover {
+  box-shadow: unset;
+  transform: translateY(0.2rem);
 }
 .cta-banner__btn .cta-banner__btn-label {
   display: flex;
@@ -1304,8 +1298,8 @@ address {
   border-bottom-width: 1.5rem;
   border-left-width: 1.2rem;
 }
-.cta-banner--dual .cta-banner__btn--individual::after {
-  background-color: #E07A8A;
+.cta-banner--dual .cta-banner__btn--individual {
+  box-shadow: 0.3rem 0.2rem 0 #E07A8A;
 }
 .cta-banner--dual .cta-banner__btn--individual .cta-banner__btn-text {
   color: #D9AEB7;
@@ -1313,8 +1307,8 @@ address {
 .cta-banner--dual .cta-banner__btn--individual .cta-banner__btn-icon {
   border-left-color: #E07A8A;
 }
-.cta-banner--dual .cta-banner__btn--corporate::after {
-  background-color: #3A4A6B;
+.cta-banner--dual .cta-banner__btn--corporate {
+  box-shadow: 0.3rem 0.2rem 0 #3A4A6B;
 }
 .cta-banner--dual .cta-banner__btn--corporate .cta-banner__btn-text {
   color: #2F3E5C;
@@ -3168,5 +3162,3 @@ address {
   text-decoration: none;
   letter-spacing: 0;
 }
-
-/*# sourceMappingURL=style.css.map */
