@@ -137,4 +137,82 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
+
+  const applicationForm = document.querySelector('.application__form');
+  if (applicationForm) {
+    const resultEl = applicationForm.querySelector('.application__result');
+    const submitBtn = applicationForm.querySelector('.application__submit');
+
+    const showResult = (message, isError) => {
+      if (!resultEl) return;
+      resultEl.textContent = message;
+      resultEl.className = 'application__result' + (isError ? ' is-error' : ' is-success');
+      resultEl.hidden = false;
+      resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    };
+
+    const validateForm = () => {
+      const required = [
+        { id: 'company', label: '企業名' },
+        { id: 'name', label: 'お名前' },
+        { id: 'email', label: 'メールアドレス' },
+        { id: 'issue', label: '現在のお悩み' },
+      ];
+      for (const field of required) {
+        const el = applicationForm.querySelector('#' + field.id);
+        if (!el || !el.value.trim()) {
+          return field.label + 'を入力・選択してください。';
+        }
+      }
+      const email = applicationForm.querySelector('#email');
+      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+        return 'メールアドレスの形式が正しくありません。';
+      }
+      return null;
+    };
+
+    applicationForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const error = validateForm();
+      if (error) {
+        showResult(error, true);
+        return;
+      }
+
+      submitBtn.disabled = true;
+      if (resultEl) resultEl.hidden = true;
+
+      try {
+        const formData = new FormData(applicationForm);
+        const response = await fetch(applicationForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: { Accept: 'application/json' },
+        });
+
+        if (response.ok) {
+          showResult('お問い合わせを受け付けました。担当者よりご連絡いたします。', false);
+          applicationForm.reset();
+          const selectText = applicationForm.querySelector('.application__select-text');
+          if (selectText) selectText.textContent = '選択してください';
+          const hiddenIssue = applicationForm.querySelector('#issue');
+          if (hiddenIssue) hiddenIssue.value = '';
+          const selectOptions = applicationForm.querySelectorAll('.application__select-option');
+          selectOptions.forEach((opt, i) => {
+            opt.classList.toggle('is-selected', i === 0);
+            opt.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+          });
+        } else {
+          const data = await response.json().catch(() => ({}));
+          const msg = (data.errors && data.errors[0] && data.errors[0].message) || '送信に失敗しました。時間をおいて再度お試しください。';
+          showResult(msg, true);
+        }
+      } catch {
+        showResult('通信エラーが発生しました。インターネット接続をご確認ください。', true);
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+  }
 });
