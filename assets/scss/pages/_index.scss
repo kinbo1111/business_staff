@@ -280,6 +280,7 @@
   }
 
   &__btn {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -289,7 +290,14 @@
     font-weight: 700;
     line-height: 1;
     border-radius: 999px;
-    transition: opacity 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    text-decoration: none;
+    box-shadow: 0.3rem 0.2rem 0 $main-color;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      box-shadow: unset;
+      transform: translateY(0.2rem);
+    }
 
     span {
       font-size: 20px;
@@ -304,20 +312,12 @@
       color: #fff;
       background-color: $accent-color;
       border: 1px solid #FFFFFF;
-
-      &:hover {
-        opacity: 0.85;
-      }
     }
 
     &--secondary {
       color: $accent-color;
       background-color: #fff;
       border: 1px solid $accent-color;
-
-      &:hover {
-        background-color: rgba($accent-color, 0.06);
-      }
     }
   }
 }
@@ -1293,6 +1293,12 @@
     .cta-banner__btn {
       width: min(100%, 40rem);
       min-height: 7rem;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        box-shadow: unset;
+        transform: translateY(0.2rem);
+      }
 
       .cta-banner__btn-label {
         display: none;
@@ -1320,6 +1326,11 @@
       &--individual {
         box-shadow: 0.3rem 0.2rem 0 $accent-color;
 
+        &:hover {
+          box-shadow: unset;
+          transform: translateY(0.2rem);
+        }
+
         .cta-banner__btn-text {
           color: #D9AEB7;
         }
@@ -1331,6 +1342,11 @@
 
       &--corporate {
         box-shadow: 0.3rem 0.2rem 0 $main-color;
+
+        &:hover {
+          box-shadow: unset;
+          transform: translateY(0.2rem);
+        }
 
         .cta-banner__btn-text {
           color: $font_main;

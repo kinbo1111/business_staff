@@ -535,6 +535,7 @@ address {
   gap: 2.2rem;
 }
 .hero__btn {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -544,7 +545,13 @@ address {
   font-weight: 700;
   line-height: 1;
   border-radius: 999px;
-  transition: opacity 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+  box-shadow: 0.3rem 0.2rem 0 #3A4A6B;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.hero__btn:hover {
+  box-shadow: unset;
+  transform: translateY(0.2rem);
 }
 .hero__btn span {
   font-size: 20px;
@@ -560,16 +567,10 @@ address {
   background-color: #E07A8A;
   border: 1px solid #FFFFFF;
 }
-.hero__btn--primary:hover {
-  opacity: 0.85;
-}
 .hero__btn--secondary {
   color: #E07A8A;
   background-color: #fff;
   border: 1px solid #E07A8A;
-}
-.hero__btn--secondary:hover {
-  background-color: rgba(224, 122, 138, 0.06);
 }
 
 .problem {
@@ -1421,6 +1422,11 @@ address {
 .cta-banner--dual .cta-banner__btn {
   width: min(100%, 40rem);
   min-height: 7rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.cta-banner--dual .cta-banner__btn:hover {
+  box-shadow: unset;
+  transform: translateY(0.2rem);
 }
 .cta-banner--dual .cta-banner__btn .cta-banner__btn-label {
   display: none;
@@ -1444,6 +1450,10 @@ address {
 .cta-banner--dual .cta-banner__btn--individual {
   box-shadow: 0.3rem 0.2rem 0 #E07A8A;
 }
+.cta-banner--dual .cta-banner__btn--individual:hover {
+  box-shadow: unset;
+  transform: translateY(0.2rem);
+}
 .cta-banner--dual .cta-banner__btn--individual .cta-banner__btn-text {
   color: #D9AEB7;
 }
@@ -1452,6 +1462,10 @@ address {
 }
 .cta-banner--dual .cta-banner__btn--corporate {
   box-shadow: 0.3rem 0.2rem 0 #3A4A6B;
+}
+.cta-banner--dual .cta-banner__btn--corporate:hover {
+  box-shadow: unset;
+  transform: translateY(0.2rem);
 }
 .cta-banner--dual .cta-banner__btn--corporate .cta-banner__btn-text {
   color: #2F3E5C;
