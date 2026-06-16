@@ -1224,6 +1224,104 @@ address {
   border-bottom: 1.5rem solid transparent;
   border-left: 1.2rem solid #3A4A6B;
 }
+.cta-banner--dual {
+  background: linear-gradient(to right, #D9AEB7 0%, rgba(0, 78, 143, 0.4) 100%);
+}
+.cta-banner--dual::after {
+  content: none;
+}
+.cta-banner--dual .cta-banner__inner {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.cta-banner--dual .cta-banner__inner > .container {
+  gap: 2.4rem;
+}
+.cta-banner--dual .cta-banner__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
+}
+.cta-banner--dual .cta-banner__lead {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4rem;
+}
+.cta-banner--dual .cta-banner__lead-text {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #fff;
+  letter-spacing: 0;
+}
+@media (max-width: 768px) {
+  .cta-banner--dual .cta-banner__lead-text {
+    font-size: 16px;
+  }
+}
+.cta-banner--dual .cta-banner__spark {
+  position: relative;
+  flex-shrink: 0;
+  width: 36px;
+  height: 40px;
+}
+.cta-banner--dual .cta-banner__heading {
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+.cta-banner--dual .cta-banner__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  width: 100%;
+}
+.cta-banner--dual .cta-banner__btn {
+  width: min(100%, 40rem);
+  min-height: 7rem;
+}
+.cta-banner--dual .cta-banner__btn .cta-banner__btn-label {
+  display: none;
+}
+.cta-banner--dual .cta-banner__btn .cta-banner__btn-text {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #2F3E5C;
+  letter-spacing: 0;
+}
+.cta-banner--dual .cta-banner__btn .cta-banner__btn-text span {
+  font-size: 20px;
+}
+.cta-banner--dual .cta-banner__btn .cta-banner__btn-icon {
+  right: 3.5rem;
+  border-top-width: 1.5rem;
+  border-bottom-width: 1.5rem;
+  border-left-width: 1.2rem;
+}
+.cta-banner--dual .cta-banner__btn--individual::after {
+  background-color: #E07A8A;
+}
+.cta-banner--dual .cta-banner__btn--individual .cta-banner__btn-text {
+  color: #D9AEB7;
+}
+.cta-banner--dual .cta-banner__btn--individual .cta-banner__btn-icon {
+  border-left-color: #E07A8A;
+}
+.cta-banner--dual .cta-banner__btn--corporate::after {
+  background-color: #3A4A6B;
+}
+.cta-banner--dual .cta-banner__btn--corporate .cta-banner__btn-text {
+  color: #2F3E5C;
+}
+.cta-banner--dual .cta-banner__btn--corporate .cta-banner__btn-icon {
+  border-left-color: #3A4A6B;
+}
 
 #bg-triangle {
   position: relative;

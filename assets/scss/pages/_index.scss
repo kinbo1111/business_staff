@@ -1235,6 +1235,127 @@
       border-left: 1.2rem solid $main-color;
     }
   }
+
+  &--dual {
+    background: linear-gradient(to right, #D9AEB7 0%, rgba(#004E8F, 0.4) 100%);
+
+    &::after {
+      content: none;
+    }
+
+    .cta-banner__inner {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+
+      > .container {
+        gap: 2.4rem;
+      }
+    }
+
+    .cta-banner__head {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      text-align: center;
+    }
+
+    .cta-banner__lead {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.4rem;
+    }
+
+    .cta-banner__lead-text {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.4;
+      color: #fff;
+      letter-spacing: 0;
+
+      @include md {
+        font-size: 16px;
+      }
+    }
+
+    .cta-banner__spark {
+      position: relative;
+      flex-shrink: 0;
+      width: 36px;
+      height: 40px;
+    }
+
+    .cta-banner__heading {
+      font-size: 24px;
+      line-height: 1.4;
+      letter-spacing: 0;
+    }
+
+    .cta-banner__actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.6rem;
+      width: 100%;
+    }
+
+    .cta-banner__btn {
+      width: min(100%, 40rem);
+      min-height: 7rem;
+
+      .cta-banner__btn-label {
+        display: none;
+      }
+
+      .cta-banner__btn-text {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.35;
+        color: $font_main;
+        letter-spacing: 0;
+        span {
+          font-size: 20px;
+        }
+      }
+
+      .cta-banner__btn-icon {
+        right: 3.5rem;
+        border-top-width: 1.5rem;
+        border-bottom-width: 1.5rem;
+        border-left-width: 1.2rem;
+      }
+
+      &--individual {
+        &::after {
+          background-color: $accent-color;
+        }
+
+        .cta-banner__btn-text {
+          color: #D9AEB7;
+        }
+
+        .cta-banner__btn-icon {
+          border-left-color: $accent-color;
+        }
+      }
+
+      &--corporate {
+        &::after {
+          background-color: $main-color;
+        }
+
+        .cta-banner__btn-text {
+          color: $font_main;
+        }
+
+        .cta-banner__btn-icon {
+          border-left-color: $main-color;
+        }
+      }
+    }
+  }
 }
 
 #bg-triangle {
