@@ -1494,6 +1494,11 @@ address {
   clip-path: ellipse(55% 100% at 50% 100%);
   z-index: -1;
 }
+@media (max-width: 768px) {
+  .features__recommend::before {
+    clip-path: ellipse(100% 100% at 50% 100%);
+  }
+}
 .features__recommend-heading {
   position: relative;
   display: inline-flex;
@@ -1618,7 +1623,7 @@ address {
 }
 @media (max-width: 375px) {
   .features__audience-card {
-    padding: 2rem 1.6rem;
+    padding: 2rem 1.2rem;
   }
 }
 .features__audience-card--individual {
@@ -2150,7 +2155,7 @@ address {
 }
 @media (max-width: 375px) {
   .management__heading {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 }
 .management__heading .number {
@@ -2206,7 +2211,8 @@ address {
 @media (max-width: 768px) {
   .management__circles {
     flex-direction: column;
-    gap: 3.2rem;
+    gap: 2.2rem;
+    margin-top: 3rem;
   }
 }
 .management__circle {
@@ -2263,15 +2269,9 @@ address {
   padding: 8rem 0;
   min-height: 1000px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .method {
-    min-height: auto;
-    padding: 6rem 0 4rem;
-  }
-}
-@media (max-width: 375px) {
-  .method {
-    padding: 4.8rem 0 3rem;
+    min-height: unset;
   }
 }
 .method__label {
@@ -2288,13 +2288,6 @@ address {
   color: #2F3E5C;
   letter-spacing: 0;
   white-space: nowrap;
-}
-@media (max-width: 1024px) {
-  .method__label {
-    padding: 0 3.6rem;
-    white-space: normal;
-    text-align: center;
-  }
 }
 @media (max-width: 375px) {
   .method__label {
@@ -2329,15 +2322,10 @@ address {
   text-align: center;
   letter-spacing: 0;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .method__heading {
-    margin-top: 2.4rem;
-    font-size: 2.6rem;
-  }
-}
-@media (max-width: 375px) {
-  .method__heading {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
+    margin-bottom: 4rem;
   }
 }
 .method__item {
@@ -2345,15 +2333,17 @@ address {
   width: fit-content;
   z-index: 1;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .method__item {
     position: static;
     width: 100%;
-    max-width: 40rem;
-    margin: 0 auto 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 48rem;
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 4rem;
   }
 }
 .method__item--1 {
@@ -2361,12 +2351,11 @@ address {
   top: 144px;
   left: 0;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .method__item--1 {
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
+    position: unset;
+    top: unset;
+    left: unset;
   }
 }
 .method__item--2 {
@@ -2378,14 +2367,11 @@ address {
   justify-content: flex-end;
   flex-direction: column;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .method__item--2 {
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
-    flex-direction: column;
-    align-items: center;
+    position: unset;
+    top: unset;
+    right: unset;
   }
 }
 .method__item--3 {
@@ -2393,12 +2379,11 @@ address {
   bottom: 58px;
   left: 100px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .method__item--3 {
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
+    position: unset;
+    top: unset;
+    left: unset;
   }
 }
 .method__item--4 {
@@ -2406,12 +2391,11 @@ address {
   bottom: 71px;
   right: 0;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .method__item--4 {
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
+    position: unset;
+    top: unset;
+    right: unset;
   }
 }
 .method__photo {
@@ -2420,12 +2404,12 @@ address {
   height: 270px;
   z-index: 1;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .method__photo {
     width: 100%;
-    max-width: 34rem;
+    max-height: 24rem;
+    overflow: hidden;
     height: auto;
-    aspect-ratio: 375/270;
   }
 }
 .method__photo img {
@@ -2437,30 +2421,36 @@ address {
   width: 281px;
   height: 311px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .method__item--2 .method__photo {
-    max-width: 28rem;
-    aspect-ratio: 281/311;
+    width: 100%;
+    max-height: 24rem;
+    overflow: hidden;
+    height: auto;
   }
 }
 .method__item--3 .method__photo {
   width: 341px;
   height: 193px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .method__item--3 .method__photo {
-    max-width: 34rem;
-    aspect-ratio: 341/193;
+    width: 100%;
+    max-height: 24rem;
+    overflow: hidden;
+    height: auto;
   }
 }
 .method__item--4 .method__photo {
   width: 389px;
   height: 257px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .method__item--4 .method__photo {
-    max-width: 36rem;
-    aspect-ratio: 389/257;
+    width: 100%;
+    max-height: 24rem;
+    overflow: hidden;
+    height: auto;
   }
 }
 .method__card {
@@ -2477,10 +2467,9 @@ address {
   margin-top: -92px;
   margin-left: 65px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .method__card {
     width: 100%;
-    max-width: 40rem;
     margin-top: -4rem;
     margin-left: 0;
     margin-right: 0;
@@ -2498,9 +2487,27 @@ address {
   margin-right: 148px;
   margin-left: unset;
 }
+@media (max-width: 768px) {
+  .method__item--2 .method__card {
+    width: 100%;
+    margin-top: -4rem;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 2rem;
+  }
+}
 .method__item--3 .method__card {
   margin-top: -92px;
   margin-left: 247px;
+}
+@media (max-width: 768px) {
+  .method__item--3 .method__card {
+    width: 100%;
+    margin-top: -4rem;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 2rem;
+  }
 }
 .method__card-head {
   display: flex;
@@ -2984,18 +2991,18 @@ address {
 .reason__content {
   flex: 1;
   min-width: 0;
-  max-width: 50%;
-}
-@media (max-width: 768px) {
-  .reason__content {
-    max-width: 100%;
-    width: 100%;
-  }
+  max-width: 45rem;
+  width: 100%;
 }
 .reason__head {
   display: flex;
   align-items: flex-start;
   gap: 1.4rem;
+}
+@media (max-width: 768px) {
+  .reason__head {
+    align-items: center;
+  }
 }
 .reason__meta {
   display: flex;
@@ -3338,7 +3345,7 @@ address {
 @media (max-width: 768px) {
   .profile__reasons {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 0;
     margin-top: 4rem;
   }
 }
@@ -4129,6 +4136,7 @@ address {
 }
 @media (max-width: 768px) {
   .application__label {
+    font-size: 14px;
     padding-top: 0;
   }
 }
@@ -4145,6 +4153,11 @@ address {
   font-weight: 700;
   line-height: 1;
   letter-spacing: 0;
+}
+@media (max-width: 768px) {
+  .application__badge {
+    font-size: 12px;
+  }
 }
 .application__badge.is-required {
   color: #fff;
@@ -4172,6 +4185,7 @@ address {
   .application__control {
     height: 5.4rem;
     padding: 0 2rem;
+    font-size: 14px;
   }
 }
 @media (max-width: 375px) {
@@ -4239,11 +4253,22 @@ address {
   text-align: left;
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  .application__select-trigger {
+    padding: 0 2rem;
+    font-size: 14px;
+  }
+}
 .application__select-text {
   display: block;
   font-size: 16px;
   line-height: 1;
   transform: translateY(2px);
+}
+@media (max-width: 768px) {
+  .application__select-text {
+    font-size: 14px;
+  }
 }
 .application__select-options {
   position: absolute;
@@ -4265,6 +4290,11 @@ address {
   line-height: 1;
   color: #2F3E5C;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .application__select-option {
+    font-size: 14px;
+  }
 }
 .application__select-option.is-selected {
   margin: 0 1.1rem 0.4rem;
