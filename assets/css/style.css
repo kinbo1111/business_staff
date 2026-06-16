@@ -1535,4 +1535,225 @@ address {
   letter-spacing: 0;
 }
 
+.stage {
+  position: relative;
+  padding: 5rem 0 4rem;
+  background-color: #3A4A6B;
+  overflow: hidden;
+}
+.stage::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url(../images/cta_mask.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.stage__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stage__header {
+  text-align: center;
+  color: #fff;
+}
+.stage__lead {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+.stage__heading {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+.stage__flow {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 2.8rem;
+}
+@media (max-width: 768px) {
+  .stage__flow {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+  }
+}
+.stage__card {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 240px;
+  height: 150px;
+  padding: 2.4rem 2rem;
+  background-color: #fff;
+  border-radius: 25px;
+  border: 2px solid #B0A8A8;
+}
+@media (max-width: 1024px) {
+  .stage__card {
+    flex: 1 1 calc(50% - 3rem);
+  }
+}
+@media (max-width: 768px) {
+  .stage__card {
+    flex: none;
+    width: 100%;
+    max-width: 32rem;
+  }
+}
+.stage__card > .stage__card-head {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  min-height: 40px;
+  padding-left: 1.8rem;
+  padding-top: 2px;
+}
+.stage__card > .stage__card-head > .stage__label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  writing-mode: vertical-rl;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  background: linear-gradient(to right, #004E8F 0%, #72C6EF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  letter-spacing: 0;
+  transform: rotate(180deg);
+}
+.stage__card > .stage__card-head > .stage__number {
+  flex-shrink: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1;
+  background: linear-gradient(to right, #004E8F 0%, #72C6EF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  letter-spacing: 0;
+}
+.stage__card > .stage__card-head > .stage__title {
+  flex: 1;
+  min-width: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  color: #2F3E5C;
+  letter-spacing: 0;
+}
+.stage__card > .stage__line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 1.1rem 0;
+  background: linear-gradient(to right, rgba(0, 78, 143, 0.25) 0%, rgba(114, 198, 239, 0.55) 100%);
+}
+.stage__card > .stage__desc {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #2F3E5C;
+  letter-spacing: 0;
+  padding-left: 1rem;
+}
+.stage__arrow {
+  flex-shrink: 0;
+  align-self: center;
+  width: 0;
+  height: 0;
+  border-top: 1.5rem solid transparent;
+  border-bottom: 1.5rem solid transparent;
+  border-left: 1.2rem solid #fff;
+}
+@media (max-width: 1024px) {
+  .stage__arrow {
+    display: none;
+  }
+}
+.stage__cta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 390px);
+  min-height: 70px;
+  margin-top: 4.8rem;
+  background-color: #fff;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.stage__cta::after {
+  content: "";
+  position: absolute;
+  top: 0.25rem;
+  left: 0.35rem;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: #2F3E5C;
+  border-radius: 999px;
+}
+.stage__cta > .stage__cta-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.stage__cta > .stage__cta-label > .stage__cta-sub {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  color: #2F3E5C;
+  letter-spacing: 2%;
+}
+.stage__cta > .stage__cta-label > .stage__cta-sub span {
+  font-size: 24px;
+  font-style: italic;
+  letter-spacing: 0;
+}
+.stage__cta > .stage__cta-label > .stage__cta-text {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #2F3E5C;
+  letter-spacing: 2%;
+}
+.stage__cta > .stage__cta-label > .stage__cta-text span {
+  font-size: 20px;
+}
+.stage__cta > .stage__cta-icon {
+  position: absolute;
+  top: 50%;
+  right: 3.5rem;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 1.5rem solid transparent;
+  border-bottom: 1.5rem solid transparent;
+  border-left: 1.2rem solid #E8C7CE;
+}
+
 /*# sourceMappingURL=style.css.map */
