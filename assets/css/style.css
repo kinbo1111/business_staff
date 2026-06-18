@@ -1986,7 +1986,10 @@ address {
     font-size: 1.4rem;
   }
 }
-.cta-banner__btn--individual .cta-banner__btn-text {
+.cta-banner--dual .cta-banner__btn--individual .cta-banner__btn-text {
+  color: #D9AEB7;
+}
+.cta-banner--dual .cta-banner__btn--individual .cta-banner__btn-text span {
   color: #D9AEB7;
 }
 .cta-banner__btn--corporate .cta-banner__btn-text {
@@ -2958,7 +2961,7 @@ address {
 }
 .reason__item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 9rem;
   margin-top: 6.4rem;
@@ -3565,6 +3568,7 @@ address {
   padding: 3.7rem 2rem 1.4rem 2rem;
   border: 1px solid #E07A8A;
   border-radius: 3rem;
+  background-color: white;
 }
 @media (max-width: 375px) {
   .voice__card {
@@ -4021,7 +4025,7 @@ address {
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0;
-  padding-bottom: 1rem;
+  padding-bottom: 1.8rem;
   position: relative;
 }
 @media (max-width: 375px) {

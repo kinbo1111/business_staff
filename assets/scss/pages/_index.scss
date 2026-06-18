@@ -1667,8 +1667,12 @@
       }
     }
 
-    .cta-banner__btn--individual & {
+    .cta-banner--dual .cta-banner__btn--individual & {
       color: #D9AEB7;
+
+      span {
+        color: #D9AEB7;
+      }
     }
 
     .cta-banner__btn--corporate & {
@@ -2684,7 +2688,7 @@
 
   &__item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: 9rem;
     margin-top: 6.4rem;
@@ -3312,7 +3316,7 @@
     padding: 3.7rem 2rem 1.4rem 2rem;
     border: 1px solid $accent-color;
     border-radius: 3rem;
-
+    background-color: white;
     @include xs {
       min-height: 34rem;
       padding: 2.4rem 1.6rem 1.2rem;
@@ -3786,7 +3790,7 @@
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: 0;
-    padding-bottom: 1rem;
+    padding-bottom: 1.8rem;
     position: relative;
 
     @include xs {
