@@ -178,21 +178,17 @@
   @include md {
     margin-top: 7rem;
     height: auto;
-    min-height: calc(100svh - 7rem);
     overflow: hidden;
     align-items: center;
-    padding-top: 2rem;
-    padding-bottom: 4rem;
+    padding-top: 100px;
+    padding-bottom: 6rem;
     clip-path: ellipse(96% 100% at bottom);
   }
 
   @include xs {
     margin-top: 6.4rem;
-    min-height: calc(100svh - 6.4rem);
     overflow: hidden;
     align-items: center;
-    padding-top: 1.6rem;
-    padding-bottom: 5rem;
     clip-path: ellipse(96% 100% at bottom);
   }
 
@@ -530,7 +526,7 @@
     @include xs {
       margin-top: 4rem;
       margin-bottom: 2.4rem;
-      gap: 1.2rem;
+      align-items: flex-start;
     }
   }
 
@@ -560,14 +556,15 @@
 
     @include xs {
       &:nth-child(n) {
-        width: calc(50% - 0.6rem);
         max-width: none;
+        height: 200px;
+        overflow: hidden;
       }
     }
 
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
     }
   }
 
@@ -1117,8 +1114,8 @@
             display: block;
             margin-bottom: 0.2rem;
             font-size: 15px;
-            font-weight: 500;
-            color: rgba($font_main, 0.55);
+            font-weight: 700;
+            color: #E07A8A;
           }
 
           &:nth-child(2)::before {
@@ -1851,7 +1848,7 @@
     }
 
     @include xs {
-      font-size: 1.5rem;
+      font-size: 20px;
     }
 
     .number {
@@ -1862,7 +1859,7 @@
       }
 
       @include xs {
-        font-size: 2.4rem;
+        font-size: 3rem;
       }
     }
   }
@@ -1880,6 +1877,11 @@
       height: 1rem;
       background-color: $accent-color;
       border-radius: 50%;
+      @include md {
+        width: 0.6rem;
+        height: 0.6rem;
+        top: -0.6rem;
+      }
     }
   }
 
@@ -2184,6 +2186,7 @@
     }
 
     @include xs {
+      margin-top: -1rem;
       border-radius: 2.4rem;
       padding: 1.6rem;
     }
@@ -2960,7 +2963,7 @@
     }
 
     @include xs {
-      font-size: 1.8rem;
+      font-size: 2rem;
     }
   }
 
@@ -3027,6 +3030,9 @@
     flex: 1;
     max-width: 220px;
     width: 100%;
+    @include md {
+      max-width: 100%;
+    }
   }
 
   &__career-text {
@@ -3664,7 +3670,7 @@
     }
 
     @include xs {
-      font-size: 1.7rem;
+      font-size: 2rem;
     }
   }
 
@@ -3678,7 +3684,7 @@
 
     @include md {
       flex-direction: column;
-      gap: 4.8rem;
+      gap: 2.5rem;
     }
   }
 

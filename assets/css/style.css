@@ -552,22 +552,18 @@ address {
   .hero {
     margin-top: 7rem;
     height: auto;
-    min-height: calc(100svh - 7rem);
     overflow: hidden;
     align-items: center;
-    padding-top: 2rem;
-    padding-bottom: 4rem;
+    padding-top: 100px;
+    padding-bottom: 6rem;
     clip-path: ellipse(96% 100% at bottom);
   }
 }
 @media (max-width: 375px) {
   .hero {
     margin-top: 6.4rem;
-    min-height: calc(100svh - 6.4rem);
     overflow: hidden;
     align-items: center;
-    padding-top: 1.6rem;
-    padding-bottom: 5rem;
     clip-path: ellipse(96% 100% at bottom);
   }
 }
@@ -915,7 +911,7 @@ address {
   .problem__list {
     margin-top: 4rem;
     margin-bottom: 2.4rem;
-    gap: 1.2rem;
+    align-items: flex-start;
   }
 }
 .problem__item:nth-child(1) {
@@ -938,13 +934,14 @@ address {
 }
 @media (max-width: 375px) {
   .problem__item:nth-child(n) {
-    width: calc(50% - 0.6rem);
     max-width: none;
+    height: 200px;
+    overflow: hidden;
   }
 }
 .problem__item img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 .problem__cta {
   position: relative;
@@ -1459,8 +1456,8 @@ address {
     display: block;
     margin-bottom: 0.2rem;
     font-size: 15px;
-    font-weight: 500;
-    color: rgba(47, 62, 92, 0.55);
+    font-weight: 700;
+    color: #E07A8A;
   }
   .features__table tbody td:nth-child(2)::before {
     content: "テーマ";
@@ -2158,7 +2155,7 @@ address {
 }
 @media (max-width: 375px) {
   .management__heading {
-    font-size: 1.5rem;
+    font-size: 20px;
   }
 }
 .management__heading .number {
@@ -2171,7 +2168,7 @@ address {
 }
 @media (max-width: 375px) {
   .management__heading .number {
-    font-size: 2.4rem;
+    font-size: 3rem;
   }
 }
 .management__char {
@@ -2187,6 +2184,13 @@ address {
   height: 1rem;
   background-color: #E07A8A;
   border-radius: 50%;
+}
+@media (max-width: 768px) {
+  .management__char::after {
+    width: 0.6rem;
+    height: 0.6rem;
+    top: -0.6rem;
+  }
 }
 .management__desc {
   font-size: 20px;
@@ -2481,6 +2485,7 @@ address {
 }
 @media (max-width: 375px) {
   .method__card {
+    margin-top: -1rem;
     border-radius: 2.4rem;
     padding: 1.6rem;
   }
@@ -3230,7 +3235,7 @@ address {
 }
 @media (max-width: 375px) {
   .profile__lead {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 }
 .profile__message {
@@ -3292,6 +3297,11 @@ address {
   flex: 1;
   max-width: 220px;
   width: 100%;
+}
+@media (max-width: 768px) {
+  .profile__career-main {
+    max-width: 100%;
+  }
 }
 .profile__career-text {
   font-size: 15px;
@@ -3902,7 +3912,7 @@ address {
 }
 @media (max-width: 375px) {
   .inquiry__heading {
-    font-size: 1.7rem;
+    font-size: 2rem;
   }
 }
 .inquiry__content {
@@ -3916,7 +3926,7 @@ address {
 @media (max-width: 768px) {
   .inquiry__content {
     flex-direction: column;
-    gap: 4.8rem;
+    gap: 2.5rem;
   }
 }
 .inquiry__photo {
