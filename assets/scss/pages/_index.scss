@@ -4230,6 +4230,57 @@
     }
   }
 
+  &__top-btn {
+    position: absolute;
+    top: 2.4rem;
+    right: max(2rem, calc(50% - 55.5rem + 2rem));
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: $main-color;
+    text-decoration: none;
+    box-shadow: 0 0.2rem 0.8rem rgba(#000, 0.18);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      opacity: 0.9;
+      transform: translateY(-0.2rem);
+    }
+
+    @include md {
+      top: 1.6rem;
+      right: 1.6rem;
+      width: 5.6rem;
+      height: 5.6rem;
+    }
+  }
+  &__top-icon_ellipse {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: currentColor;
+  }
+  &__top-icon_line {
+    width: 1px;
+    height: 13px;
+    background-color: currentColor;
+  }
+
+  &__top-text {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    margin-top: 3px;
+  }
+
   &__body {
     position: relative;
     width: 100%;
