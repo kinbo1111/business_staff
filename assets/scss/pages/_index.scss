@@ -181,7 +181,7 @@
     overflow: hidden;
     align-items: center;
     padding-top: 100px;
-    padding-bottom: 6rem;
+    padding-bottom: 40px;
     clip-path: ellipse(96% 100% at bottom);
   }
 
@@ -225,18 +225,6 @@
   &__inner {
     position: relative;
     z-index: 1;
-    padding-top: 1rem;
-    padding-bottom: 1.5rem;
-
-    @include md {
-      padding-top: 1.6rem;
-      padding-bottom: 3rem;
-    }
-
-    @include xs {
-      padding-top: 1.2rem;
-      padding-bottom: 3.2rem;
-    }
   }
 
   &__content {
@@ -281,6 +269,8 @@
 
       @include sm {
         padding: 1.4rem 1.6rem;
+        margin-top: 40px;
+        background-color: rgba(255, 255, 255, 0.65);
       }
 
       @include xs {
@@ -526,7 +516,7 @@
     @include xs {
       margin-top: 4rem;
       margin-bottom: 2.4rem;
-      align-items: flex-start;
+      align-items: center;
     }
   }
 
@@ -559,6 +549,9 @@
         max-width: none;
         height: 200px;
         overflow: hidden;
+      }
+      &:nth-child(2) {
+        height: 170px;
       }
     }
 
@@ -1849,11 +1842,12 @@
 
     @include xs {
       font-size: 20px;
+      line-height: 1.6;
     }
 
     .number {
       font-size: 40px;
-
+      line-height: 1;
       @include md {
         font-size: 3.2rem;
       }
@@ -1880,7 +1874,7 @@
       @include md {
         width: 0.6rem;
         height: 0.6rem;
-        top: -0.6rem;
+        top: -0.3rem;
       }
     }
   }
@@ -2186,7 +2180,7 @@
     }
 
     @include xs {
-      margin-top: -1rem;
+      margin-top: 1rem;
       border-radius: 2.4rem;
       padding: 1.6rem;
     }
